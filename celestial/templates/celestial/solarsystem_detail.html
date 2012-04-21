@@ -5,7 +5,7 @@
 {% block content %}
 {% if object.planets.count %}
 <ul>
-    {% for planet in object.planets.all %}
+    {% for planet in planets %}
     <li><a href="{{ planet.get_absolute_url }}">{{ planet }}</a></li>
     {% endfor %}
 </ul>

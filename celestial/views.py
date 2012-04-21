@@ -22,7 +22,10 @@ class SystemList(SystemMixin, ListView):
 
 
 class SystemDetail(SystemMixin, DetailView):
-    pass
+    def get_context_data(self, **kwargs):
+        data = super(SystemDetail, self).get_context_data(**kwargs)
+        data.update({'planets': Planet.objects.filter(solar_system=self.object, radius__isnull=False)})
+        return data
 
 class PlanetList(PlanetMixin, ListView):
     pass
