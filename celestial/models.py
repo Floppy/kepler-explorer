@@ -44,6 +44,8 @@ class Planet(models.Model):
             help_text=_('Equilibrium surface temperature of planet'))
     semi_major_axis = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
             help_text=_('''Semi-major axis of orbit in AU based on Newton's generalization of Kepler's third law'''))
+    density = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
+            help_text=_('''Density of planet'''))
     gravity = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
             help_text=_('''Strength of gravity on surface'''))
     orbital_period = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,

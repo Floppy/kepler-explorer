@@ -43,7 +43,11 @@ class ExoplanetsImporter:
                     planet.radius = row[headers['R']] or None
                     planet.temperature = 42 # Obviously not real at the moment
                     planet.semi_major_axis = row[headers['A']]
-                    planet.gravity = 10 # Obviously not real at the moment
+                    planet.density = row[headers['DENSITY']] or None
+                    try:
+                        planet.gravity = pow(10, float(row[headers['GRAVITY']])) / 100.0 # To get m/s^2
+                    except ValueError:
+                        system.gravity = None
                     planet.orbital_period = row[headers['PER']]
                     planet.save()
                 except ValidationError:
