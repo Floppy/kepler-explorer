@@ -733,7 +733,7 @@ legend + .control-group {
 /* line 1, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
 .starfield {
   position: relative;
-  height: 800px;
+  height: 100%;
   width: 100%;
   background: black;
   margin: 0px auto;
