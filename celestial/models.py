@@ -134,13 +134,14 @@ class Planet(models.Model):
 
         planet_distance - the distance to the planet in parsecs
 
-        returns the time in seconds taken to get to the planet
+        returns the time in years taken to get to the planet
 
         """
         m_per_parsec = Decimal(3.08568025e16)
+        s_per_year = Decimal(31556926)
         if not self.solar_system.distance:
             return ''
-        return self.solar_system.distance * m_per_parsec / speed_of_craft
+        return (self.solar_system.distance * m_per_parsec / speed_of_craft) / s_per_year
 
 
     @property
