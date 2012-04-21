@@ -1,15 +1,13 @@
 {% extends 'celestial/base.html' %}
 {% load celestial_tags %}
 
-{% block page_title %}<h2>Systems</h2>{% endblock %}
+{% block page_title %}{% endblock %}
 
 {% block content %}
 	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class='starfield'>
 	    {% for system in object_list %}
-			
-		
-	        <a class='star' xlink:href="{{ system.get_absolute_url }}" title='{{system}}'>
-	        	<circle cx="{{system.right_ascension|right_ascension:100}}%" cy="{{system.declination|declination:100}}%" r="5" stroke="black" stroke-width="1" fill="{{system.colour_of_star}}"/>
+	        <a class='star' xlink:href="{{ system.get_absolute_url }}" xlink:title='{{system}}'>
+	        	<circle cx="{{system.right_ascension|right_ascension:100}}%" cy="{{system.declination|declination:100}}%" r="{{system.radius|stellar_radius}}" fill="{{system.colour_of_star}}"/>
 	        </a>
 	    {% endfor %}
 	</svg>
