@@ -69,8 +69,7 @@ class Planet(models.Model):
 
         returns the weight of the object on the planet, in the same units it was given in
         """
-
-        return weight_on_earth * (self.gravity / 9.80665)
+        return Decimal(weight_on_earth) * (self.gravity / Decimal(9.80665))
 
     @property
     def time_to_go_circumnavigate_by_airbus_a380(self):
@@ -97,10 +96,10 @@ class Planet(models.Model):
         returns the age in planet years, i.e. how many times the planet has
         orbitted its star in the time given
         """
-        return age_in_years * self.orbital_period / 365.256363
+        return age_in_years * self.orbital_period / Decimal(365.256363)
 
     def time_to_planet_at_speed(self, speed_of_craft):
-        m_per_parsec = 3.08568025e16
+        m_per_parsec = Decimal(3.08568025e16)
         if not self.solar_system.distance:
             return ''
         return self.solar_system.distance * m_per_parsec / speed_of_craft
@@ -117,7 +116,7 @@ class Planet(models.Model):
 
         returns the time in seconds taken to get to the planet
         """
-        speed_of_craft = 17255.56
+        speed_of_craft = Decimal(17255.56)
         return self.time_to_planet_at_speed(speed_of_craft)
 
     @property
@@ -131,7 +130,7 @@ class Planet(models.Model):
 
         returns the time in seconds taken to get to the planet
         """
-        speed_of_craft = 31.2928
+        speed_of_craft = Decimal(31.2928)
         return self.time_to_planet_at_speed(speed_of_craft)
 
     @property
@@ -155,7 +154,7 @@ class Planet(models.Model):
         # Radius is in AU, so convert to km
         radius = self.solar_system.radius * 149598000
         # Distance is in parsecs, so convert to km
-        distance = self.solar_system.distance * 3.08568025e13
+        distance = self.solar_system.distance * Decimal('3.08568025e13')
 
         # 2* because we only give radius (not diameter), 180/pi to convert to degrees
         return 2*atan2(radius, distance)*180/pi
