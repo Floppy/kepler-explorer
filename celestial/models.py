@@ -99,6 +99,14 @@ class Planet(models.Model):
         return age_in_years * self.orbital_period / Decimal(365.256363)
 
     def time_to_planet_at_speed(self, speed_of_craft):
+        """
+        Calculates the time to travel to the planet at a given speed
+
+        planet_distance - the distance to the planet in parsecs
+
+        returns the time in seconds taken to get to the planet
+
+        """
         m_per_parsec = Decimal(3.08568025e16)
         if not self.solar_system.distance:
             return ''
@@ -132,6 +140,32 @@ class Planet(models.Model):
         """
         speed_of_craft = Decimal(31.2928)
         return self.time_to_planet_at_speed(speed_of_craft)
+
+
+    @property
+    def time_to_boil_tea(planet_temperature):
+        """
+        Calculates the time taken to boil a cup of tea
+        planet_temperature - the temperature of the planet in K
+
+        returns:
+            the time in seconds to boil a cup of tea
+            OR None if it's too cold
+        """
+        return ''
+
+    @property
+    def time_to_freeze_lolly(planet_temperature):
+        """
+        Calculates the time taken to freeze an ice lolly
+
+        planet_temperature - the temperature of the planet in K
+
+        returns:
+            the time in seconds to freeze an ice lolly
+            OR None if it's too warm
+        """
+        return ''
 
     @property
     def size_of_star_in_sky(self):

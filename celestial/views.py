@@ -3,20 +3,29 @@ from django.views.generic import ListView, DetailView
 from .models import Planet, SolarSystem
 
 
-class SystemList(ListView):
+class SystemMixin(object):
     model = SolarSystem
-
-
-class SystemDetail(DetailView):
-    model = SolarSystem
-
-
-class PlanetList(ListView):
-    model = Planet
-    
     def get_queryset(self):
-        return super(PlanetList, self).get_queryset().filter(radius__isnull = False)
+        return super(SystemMixin, self).get_queryset().filter(radius__isnull=False)
 
 
-class PlanetDetail(DetailView):
+class PlanetMixin(object):
     model = Planet
+    def get_queryset(self):
+        return super(PlanetMixin, self).get_queryset().filter(
+                solar_system__radius__isnull=False,
+                radius__isnull=False)
+
+
+class SystemList(SystemMixin, ListView):
+    pass
+
+
+class SystemDetail(SystemMixin, DetailView):
+    pass
+
+class PlanetList(PlanetMixin, ListView):
+    pass
+
+class PlanetDetail(PlanetMixin, DetailView):
+    pass
