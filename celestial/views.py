@@ -13,6 +13,9 @@ class SystemDetail(DetailView):
 
 class PlanetList(ListView):
     model = Planet
+    
+    def get_queryset(self):
+        return super(PlanetList, self).get_queryset().filter(radius__isnull = False)
 
 
 class PlanetDetail(DetailView):
