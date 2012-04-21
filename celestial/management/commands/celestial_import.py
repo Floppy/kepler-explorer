@@ -2,7 +2,10 @@ from django.core.management.base import BaseCommand, CommandError
 from celestial.exoplanets_importer import ExoplanetsImporter
 
 class Command(BaseCommand):
-    help = 'Import data'
+    help = 'Import data for celestial objects'
 
     def handle(self, *args, **options):
-        ExoplanetsImporter.run()
+        if args:
+            ExoplanetsImporter.run(*args)
+        else:
+            ExoplanetsImporter.run()
