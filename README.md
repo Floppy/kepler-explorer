@@ -13,10 +13,10 @@ Create kepler/local_settings.example.py and set any personal preferences:
 
 Create the initial database:
 
-    python kepler/manage.py syncdb
+    python manage.py syncdb
 
 Run the development server:
 
-    python kepler/manage.py runserver
+    python manage.py runserver
 
 Go to http://127.0.0.1:8000/
