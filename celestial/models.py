@@ -134,8 +134,13 @@ class Planet(models.Model):
         
         returns the size of the star in the sky in degrees
         """
+        # Radius is in AU, so convert to km
+        radius = self.solar_system.radius * 149598000
+        # Distance is in parsecs, so convert to km
+        distance = self.solar_system.distance * 3.08568025e13
+        
         # 2* because we only give radius (not diameter), 180/pi to convert to degrees
-        return 2*atan2(self.solar_system.radius, self.solar_system.distance)*180/pi
+        return 2*atan2(radius, distance)*180/pi
     
     def colour_of_star(self):
         """
