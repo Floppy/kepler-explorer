@@ -25,17 +25,26 @@ class ExoplanetsImporter:
                 # Find and store system data
                 try:
                     system, created = SolarSystem.objects.get_or_create(name = row[headers['STAR']])
+                    system.magnitude = row[headers['V']] or None
+                    try:
+                        system.radius = float(row[headers['A']]) / float(row[headers['AR']])
+                    except ValueError:
+                        system.radius = None
                     system.temperature = row[headers['TEFF']] or None
+                    system.right_ascension = row[headers['RA']] or None
+                    system.declination = row[headers['DEC']] or None
+                    system.distance = row[headers['DISTANCE']] or None
                     system.save()
                 except ValidationError:
-                    print stardata
                     raise
                 # Find and store planet data
                 try:
                     planet, created = Planet.objects.get_or_create(name = row[headers['NAME']], solar_system = system)
                     planet.radius = row[headers['R']] or None
+                    planet.temperature = 42 # Obviously not real at the moment
                     planet.semi_major_axis = row[headers['A']]
+                    planet.gravity = 10 # Obviously not real at the moment
+                    planet.orbital_period = row[headers['PER']]
                     planet.save()
                 except ValidationError:
-                    print planetdata
                     raise

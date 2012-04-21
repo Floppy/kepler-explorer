@@ -14,9 +14,9 @@ class SolarSystem(models.Model):
             help_text=_('Radius of primary star'))
     temperature = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
             help_text=_('Surface temperature of star'))
-    right_ascension = models.CharField(max_length=32,
+    right_ascension = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
             help_text=_('Right Ascension'))
-    declination = models.CharField(max_length=32,
+    declination = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
             help_text=_('Declination'))
     distance = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
             help_text=_('Distance from Earth'))
@@ -43,9 +43,10 @@ class Planet(models.Model):
             help_text=_('Equilibrium surface temperature of planet'))
     semi_major_axis = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
             help_text=_('''Semi-major axis of orbit in AU based on Newton's generalization of Kepler's third law'''))
-    # TODO these need to be real
-    gravity = 10 # m/s
-    orbital_period = 365 # days
+    gravity = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
+            help_text=_('''Strength of gravity on surface'''))
+    orbital_period = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
+            help_text=_('''Time take to rotate around the star once'''))
     
     class Meta:
         ordering = ('name',)
