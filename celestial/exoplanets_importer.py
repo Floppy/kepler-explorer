@@ -23,25 +23,19 @@ class ExoplanetsImporter:
                 got_headers = True
             else:
                 # Find and store system data
-                stardata = {
-                    'name': row[headers['STAR']],
-                    'temperature': row[headers['TEFF']] or None
-                }
                 try:
-                    system, created = SolarSystem.objects.get_or_create(**stardata)
+                    system, created = SolarSystem.objects.get_or_create(name = row[headers['STAR']])
+                    system.temperature = row[headers['TEFF']] or None
+                    system.save()
                 except ValidationError:
                     print stardata
                     raise
                 # Find and store planet data
-                planetdata = {
-                    'name': row[headers['NAME']],
-                    'radius': row[headers['R']] or None,
-                    #'temperature': row[headers['NAME']],
-                    'semi_major_axis': row[headers['A']],
-                    'solar_system': system
-                }
                 try:
-                    planet, created = Planet.objects.get_or_create(**planetdata)
+                    planet, created = Planet.objects.get_or_create(name = row[headers['NAME']], solar_system = system)
+                    planet.radius = row[headers['R']] or None
+                    planet.semi_major_axis = row[headers['A']]
+                    planet.save()
                 except ValidationError:
                     print planetdata
                     raise
