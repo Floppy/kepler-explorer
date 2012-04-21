@@ -1,5 +1,7 @@
 {% extends 'celestial/base.html' %}
 
+{% load humanize %}
+
 {% block extra_script %}
 <script>
     $(document).ready(function () {
@@ -22,7 +24,7 @@
     <dl>
         {% if planet.time_to_go_circumnavigate_by_airbus_a380 %}
         <dt>Time to circumnavigate by aeroplane</dt>
-        <dd>{{ planet.time_to_go_circumnavigate_by_airbus_a380|floatformat:"0" }} hrs</dd>
+        <dd>{{ planet.time_to_go_circumnavigate_by_airbus_a380|stringformat:"d" }} hrs</dd>
         {% endif %}
         {% if planet.time_to_boil_tea %}
         <dt>Time to boil tea</dt>
@@ -38,11 +40,11 @@
         {% endif %}
         {% if planet.time_to_planet_by_spacecraft %}
         <dt>Time to planet by spacecraft</dt>
-        <dd>{{ planet.time_to_planet_by_spacecraft|floatformat:"0"  }} years</dd>
+        <dd>{{ planet.time_to_planet_by_spacecraft|intcomma }} years</dd>
         {% endif %}
         {% if planet.time_to_planet_by_car %}
         <dt>Time to planet by car</dt>
-        <dd>{{ planet.time_to_planet_by_car|floatformat:"0"  }} years</dd>
+        <dd>{{ planet.time_to_planet_by_car|intcomma }} years</dd>
         {% endif %}
     </dl>
 

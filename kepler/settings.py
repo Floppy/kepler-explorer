@@ -196,6 +196,7 @@ INSTALLED_APPS = (
     'south',
     #'gunicorn',
     # django apps
+    'django.contrib.humanize',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
