@@ -1,23 +1,17 @@
 {% extends 'celestial/base.html' %}
+{% load celestial_tags %}
 
 {% block page_title %}<h2>Systems</h2>{% endblock %}
 
 {% block content %}
-    {% for system in object_list %}
-    <article>
-        <h3><a href="{{ system.get_absolute_url }}">{{ system }}</a></h3>
-        {% if system.planets.count %}
-        <ul>
-        {% for planet in system.planets.all %}
-            <li><a href="{{ planet.get_absolute_url }}">{{ planet }}</a></li>
-        {% endfor %}
-        </ul>
-        {% else %}
-        <p>No known planets!</p>
-        {% endif %}
-    </article>
-    {% empty %}
-    <p>No celestial bodies found</p>
-    {% endfor %}
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class='starfield'>
+	    {% for system in object_list %}
+			
+		
+	        <a class='star' xlink:href="{{ system.get_absolute_url }}" title='{{system}}'>
+	        	<circle cx="{{system.right_ascension|right_ascension:100}}%" cy="{{system.declination|declination:100}}%" r="5" stroke="black" stroke-width="1" fill="{{system.colour_of_star}}"/>
+	        </a>
+	    {% endfor %}
+	</svg>
 {% endblock %}
 
