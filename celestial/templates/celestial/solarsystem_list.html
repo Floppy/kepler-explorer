@@ -5,11 +5,11 @@
 {% block content %}
     {% for system in object_list %}
     <article>
-        <h3>{{ system }}</h3>
+        <h3><a href="{{ system.get_absolute_url }}">{{ system }}</a></h3>
         {% if system.planets.count %}
         <ul>
         {% for planet in system.planets.all %}
-            <li><a href="{{ planel.get_absolute_url }}">{{ planet }}</a></li>
+            <li><a href="{{ planet.get_absolute_url }}">{{ planet }}</a></li>
         {% endfor %}
         </ul>
         {% else %}
