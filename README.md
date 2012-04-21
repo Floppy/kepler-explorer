@@ -15,6 +15,11 @@ Create the initial database:
 
     python manage.py syncdb
 
+Import data
+
+    curl -O http://exoplanets.org/exoplanets.csv
+	python manage.py celestial_import exoplanets.csv
+
 Run the development server:
 
     python manage.py runserver
