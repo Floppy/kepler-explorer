@@ -26,9 +26,9 @@ class SolarSystem(models.Model):
     def __unicode__(self):
         return self.kepler_id
 
-    #@models.permalink
-    #def get_absolute_url(self):
-    #    return ('view_or_url_name' )
+    @models.permalink
+    def get_absolute_url(self):
+        return ('system-detail', [self.pk])
 
 
 class Planet(models.Model):
@@ -44,4 +44,4 @@ class Planet(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('planet-detail', [str(self.id)])
+        return ('planet-detail', [self.pk])

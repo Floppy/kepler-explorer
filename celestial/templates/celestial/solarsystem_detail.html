@@ -1,0 +1,15 @@
+{% extends 'celestial/base.html' %}
+
+{% block page_title %}<h2>System: {{ object }}</h2>{% endblock %}
+
+{% block content %}
+{% if object.planets.count %}
+<ul>
+    {% for planet in object.planets.all %}
+    <li><a href="{{ planet.get_absolute_url }}">{{ planet }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No known planets!</p>
+{% endif %}
+{% endblock %}

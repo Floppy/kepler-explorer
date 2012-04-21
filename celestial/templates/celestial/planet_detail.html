@@ -1,0 +1,7 @@
+{% extends 'celestial/base.html' %}
+
+{% block page_title %}<h2>Planet: {{ object }}</h2>{% endblock %}
+
+{% block content %}
+<h3>System: <a href="{{ planet.solar_system.get_absolute_url }}">{{ planet.solar_system }}</a>
+{% endblock %}

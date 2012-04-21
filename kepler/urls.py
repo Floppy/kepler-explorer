@@ -15,7 +15,7 @@ urlpatterns = patterns(
 urlpatterns += patterns('',
     # Preview page changes
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='index'),
-    url(r'^celestial/', include('celestial.urls')),
+    url(r'', include('celestial.urls')),
 )
 
 urlpatterns += staticfiles_urlpatterns() + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

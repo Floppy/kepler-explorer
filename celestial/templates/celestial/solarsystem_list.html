@@ -1,0 +1,23 @@
+{% extends 'celestial/base.html' %}
+
+{% block page_title %}<h2>Systems</h2>{% endblock %}
+
+{% block content %}
+    {% for system in object_list %}
+    <article>
+        <h3>{{ system }}</h3>
+        {% if system.planets.count %}
+        <ul>
+        {% for planet in system.planets.all %}
+            <li><a href="{{ planel.get_absolute_url }}">{{ planet }}</a></li>
+        {% endfor %}
+        </ul>
+        {% else %}
+        <p>No known planets!</p>
+        {% endif %}
+    </article>
+    {% empty %}
+    <p>No celestial bodies found</p>
+    {% endfor %}
+{% endblock %}
+
