@@ -33,6 +33,34 @@ class SolarSystem(models.Model):
     def get_absolute_url(self):
         return ('system-detail', [self.pk])
 
+    @property
+    def colour_of_star(self):
+        """
+        Calculates the colour of the star based on its temperature
+
+        temperature - the temperature of the star in K
+
+        returns a string representing the HTML colour of the star
+        """
+        # Colours based on data here:
+        # http://outreach.atnf.csiro.au/education/senior/astrophysics/photometry_colour.html
+        temperature = self.temperature
+
+        if (temperature > 28000):
+            return "#9bb0ff"
+        elif (temperature > 10000):
+            return "#aabfff"
+        elif (temperature > 7500):
+            return "#cad7ff"
+        elif (temperature > 6000):
+            return "#f8f7ff"
+        elif (temperature > 4900):
+            return "#fff4ea"
+        elif (temperature > 3500):
+            return "#ffd2a1"
+        else:
+            return "#ffccdf"
+
 
 class Planet(models.Model):
     """A planet is a celestial body orbiting a star"""
@@ -197,28 +225,4 @@ class Planet(models.Model):
 
     @property
     def colour_of_star(self):
-        """
-        Calculates the colour of the star based on its temperature
-
-        temperature - the temperature of the star in K
-
-        returns a string representing the HTML colour of the star
-        """
-        # Colours based on data here:
-        # http://outreach.atnf.csiro.au/education/senior/astrophysics/photometry_colour.html
-        temperature = self.solar_system.temperature
-
-        if (temperature > 28000):
-            return "#9bb0ff"
-        elif (temperature > 10000):
-            return "#aabfff"
-        elif (temperature > 7500):
-            return "#cad7ff"
-        elif (temperature > 6000):
-            return "#f8f7ff"
-        elif (temperature > 4900):
-            return "#fff4ea"
-        elif (temperature > 3500):
-            return "#ffd2a1"
-        else:
-            return "#ffccdf"
+        return self.solar_system.colour_of_star
