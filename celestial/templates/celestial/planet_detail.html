@@ -1,9 +1,22 @@
 {% extends 'celestial/base.html' %}
 
+{% block extra_script %}
+<script>
+    $(document).ready(function () {
+        var canvas = $("#planetCanvas").get(0);
+        drawSky(canvas);
+        drawStar(canvas, {radius: 70, color:'{{ planet.colour_of_star }}'});
+        
+    });
+</script>
+{% endblock extra_script %}
+  
 {% block page_title %}<h2>Planet: {{ object }}</h2>{% endblock %}
 
 {% block content %}
-<h3>System: <a href="{{ planet.solar_system.get_absolute_url }}">{{ planet.solar_system }}</a>
+    <h3>System: <a href="{{ planet.solar_system.get_absolute_url }}">{{ planet.solar_system }}</a></h3>
+    <canvas id="planetCanvas" width="578" height="200"></canvas>
+    
     <dl>
         <dt>Time to circumnavigate by airbus a380</dt>
         <dd>{{ planet.time_to_go_circumnavigate_by_airbus_a380 }}</dd>
