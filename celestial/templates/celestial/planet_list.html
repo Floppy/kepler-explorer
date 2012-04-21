@@ -1,0 +1,11 @@
+{% extends 'celestial/base.html' %}
+
+{% block content %}
+    {% for planet in object_list %}
+    <article>
+    <h2>{{ planet.name }}</h2>
+    </article>
+    {% empty %}
+        <p>No celestial bodies found</p>
+    {% endfor %}
+{% endblock %}

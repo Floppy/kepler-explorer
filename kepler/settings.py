@@ -187,6 +187,7 @@ SOUTH_MIGRATION_MODULES = {
 INSTALLED_APPS = (
     # project apps
     'kepler',
+    'celestial',
     #'registration',
     #'pagination',
     #'crispy_forms',
