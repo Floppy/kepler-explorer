@@ -34,7 +34,6 @@
 
   <script src="{{ STATIC_URL }}scripts/main.js"></script>
 
-
   {% block extra_script %}{% endblock extra_script %}
 
   {% block extra_head %}{% endblock extra_head %}
@@ -99,9 +98,7 @@
             {% block footer %}
                 <footer id="site-footer">
                     <div class="structure">
-                        {% block footer_content %}
-                            [Footer]
-                        {% endblock footer_content %}
+                        {% block footer_content %}{% endblock footer_content %}
                     </div>
                 </footer>
             {% endblock footer %}
@@ -109,8 +106,6 @@
     </div>
     {% endblock wrap %}
     {% block post_wrap %}{% endblock post_wrap %}
-
-
 
   {% block google_analytics %}
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.-->

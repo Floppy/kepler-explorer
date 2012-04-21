@@ -12,7 +12,7 @@ class SolarSystem(models.Model):
     magnitude = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
             help_text=_('Magnitude'))
     radius = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
-            help_text=_('Radius of primary star'))
+            help_text=_('Radius of primary star (in AU)'))
     temperature = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
             help_text=_('Surface temperature of star'))
     right_ascension = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
@@ -67,7 +67,7 @@ class Planet(models.Model):
     name = models.CharField(max_length=255, unique=True)
     solar_system = models.ForeignKey('celestial.SolarSystem', related_name='planets')
     radius = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
-            help_text=_('Planetary radius in Earth radii (6378 km) Product of r/R* and the stellar radius'))
+            help_text=_('Planetary radius in Jupiter radii (71492 km) Product of r/R* and the stellar radius'))
     temperature = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
             help_text=_('Equilibrium surface temperature of planet'))
     semi_major_axis = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
@@ -90,6 +90,10 @@ class Planet(models.Model):
     def get_absolute_url(self):
         return ('planet-detail', [self.pk])
 
+    @property
+    def radius_km(self):
+        return self.radius*71492
+
     def weight_on_planet(self, weight_on_earth):
         """
         Calculates how much something would weigh on a planet with a given gravity
@@ -107,14 +111,13 @@ class Planet(models.Model):
         Calculates the time taken to circumnavigate a planet using an Airbus A380
         (travelling at 900km/h)
 
-        planet_radius - radius of the planet in m
+        planet_radius - radius of the planet in km
 
         returns the time in seconds to circumnavigate the planet
         """
 
-        # 900 km/h = 250 m/s
-        circ = Decimal(2*pi) * self.radius
-        return circ/Decimal(250.0)
+        circ = Decimal(2*pi) * self.radius_km
+        return circ/Decimal(900.0)
 
     def age_in_planet_years(self, age_in_years):
         """

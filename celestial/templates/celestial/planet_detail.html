@@ -20,22 +20,30 @@
     <canvas id="planetCanvas" width="578" height="200"></canvas>
     
     <dl>
-        <dt>Time to circumnavigate by airbus a380</dt>
-        <dd>{{ planet.time_to_go_circumnavigate_by_airbus_a380 }}</dd>
+        {% if planet.time_to_go_circumnavigate_by_airbus_a380 %}
+        <dt>Time to circumnavigate by aeroplane</dt>
+        <dd>{{ planet.time_to_go_circumnavigate_by_airbus_a380|floatformat:"0" }} hrs</dd>
+        {% endif %}
+        {% if planet.time_to_boil_tea %}
         <dt>Time to boil tea</dt>
         <dd>{{ planet.time_to_boil_tea }}</dd>
+        {% endif %}
+        {% if planet.time_to_freeze_lolly %}
         <dt>Time to freeze lolly</dt>
         <dd>{{ planet.time_to_freeze_lolly }}</dd>
+        {% endif %}
+        {% if planet.age_in_planet_years %}
         <dt>Age in planet years</dt>
         <dd>{{ planet.age_in_planet_years }}</dd>
+        {% endif %}
+        {% if planet.time_to_planet_by_spacecraft %}
         <dt>Time to planet by spacecraft</dt>
-        <dd>{{ planet.time_to_planet_by_spacecraft }}</dd>
+        <dd>{{ planet.time_to_planet_by_spacecraft|floatformat:"0"  }} years</dd>
+        {% endif %}
+        {% if planet.time_to_planet_by_car %}
         <dt>Time to planet by car</dt>
-        <dd>{{ planet.time_to_planet_by_car }}</dd>
-        <dt>Size of star in sky</dt>
-        <dd>{{ planet.size_of_star_in_sky }}</dd>
-        <dt>Color of star</dt>
-        <dd style="color: {{ planet.colour_of_star }}">{{ planet.colour_of_star }}</dd>
+        <dd>{{ planet.time_to_planet_by_car|floatformat:"0"  }} years</dd>
+        {% endif %}
     </dl>
 
 {% endblock %}
