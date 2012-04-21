@@ -5,4 +5,4 @@ class Command(BaseCommand):
     help = 'Import data'
 
     def handle(self, *args, **options):
-        ExoplanetsImporter.run
+        ExoplanetsImporter.run()

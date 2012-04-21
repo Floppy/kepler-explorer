@@ -26,6 +26,3 @@ class ExoplanetsImporter:
                                       #temperature = row[headers['NAME']],
                                       #semi_major_axis = row[headers['A']],
                                       solar_system = system)
-    
-
-ExoplanetsImporter.run()
