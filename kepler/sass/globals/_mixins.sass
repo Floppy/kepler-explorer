@@ -1,0 +1,68 @@
+@mixin clearfix
+  zoom: 1
+  &:before, &:after
+    content: ""
+    display: table
+  &:after
+    clear: both
+
+// Use this mixin when replacing text with an image in a block level element
+// Refrain from using text-indent: -9999em etc as it causes performance issues
+@mixin image-replace
+  border: 0
+  font: 0/0 a
+  text-shadow: none
+  color: transparent
+  background-color: transparent
+
+// IE friendly rgba backgrounds
+// Usage: @include ie-rgba(rgba(0,0,0,0.5), 0.5)
+//        @include ie-rgba(#FFF, 0.2)
+// Notice opacity always has to be declared to the same as rgba alpha value
+$number-to-hex-hexes: 0 1 2 3 4 5 6 7 8 9 A B C D E F
+@function number-to-hex($number, $width: 2)
+  $s: nth($number-to-hex-hexes, ($number % 16) + 1)
+  @if $width > 1
+    @return number-to-hex(floor($number / 16), $width - 1) + '#{$s}'
+  @else
+    @return '#{$s}'
+
+@mixin ie-rgba($color, $opacity: 1)
+  @if $opacity == 1
+    background: rgba($color, 1)
+  @else
+    $color: rgba($color, $opacity)
+    $a: number-to-hex(floor(opacity($color) * 255))
+    $r: number-to-hex(red($color))
+    $g: number-to-hex(green($color))
+    $b: number-to-hex(blue($color))
+    $argb: '#' + $a + $r + $g + $b
+    background: rgba($color, $opacity)
+    .lt-ie9 &
+      background: none
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$argb},endColorstr=#{$argb})"
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$argb},endColorstr=#{$argb})
+      zoom: 1
+
+// Usage: @include pie-element
+// Usage for pngfix: @include pngfix (must also have @include pie-element)
+// Note: Each element that has PIE enabled on it will add about 10ms to your page load.
+@import compass/css3/pie
+
+// **Note:** this file must be served as a root-relative resource or
+// else IE will interpret it as relative to the current webpage
+// instead of the stylesheet.
+//
+// **Also Note:** this file must be delivered with a mime-type of:
+//
+//    text/x-component
+$pie-behavior: url("/static_media/scripts/libs/pie.htc")
+
+// It is suggested that you use Sass's @extend directive to apply the PIE
+// behavior to your elements. Setting this variable will tell the `pie` mixin
+// to extend it. Or you can just extend the base class yourself.
+$pie-base-class: pie-element
+
+@mixin pngfix
+  -pie-png-fix: true
+

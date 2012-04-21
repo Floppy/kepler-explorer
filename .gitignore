@@ -1,4 +1,8 @@
 *.log
 *.pot
 *.pyc
-local_settings.py
+kepler/local_settings.py
+bin/
+db.sqlite
+include/
+lib/

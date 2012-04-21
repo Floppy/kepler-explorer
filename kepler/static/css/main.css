@@ -1,0 +1,803 @@
+/* line 15, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+audio, canvas, video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* line 20, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+audio:not([controls]), [hidden] {
+  display: none;
+}
+
+/* line 31, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+/* line 38, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  height: 100%;
+}
+
+/* line 50, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 53, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+b, strong {
+  font-weight: bold;
+}
+
+/* line 56, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+blockquote {
+  margin: 1em 40px;
+}
+
+/* line 59, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+dfn {
+  font-style: italic;
+}
+
+/* line 62, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* line 70, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+ins {
+  background: #ffff99;
+  color: black;
+  text-decoration: none;
+}
+
+/* line 75, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+mark {
+  background: yellow;
+  color: black;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* line 81, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+p {
+  margin: 0 0 1.5em 0;
+}
+
+/* line 86, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+pre, code, kbd, samp {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-size: 1em;
+}
+
+/* line 92, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* line 97, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+q {
+  quotes: none;
+}
+/* line 99, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* line 103, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+small {
+  font-size: 85%;
+}
+
+/* line 108, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 114, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.5em;
+}
+
+/* line 121, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 128, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+ul, ol {
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+}
+
+/* line 132, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+dd {
+  margin: 0 0 0 40px;
+}
+
+/* line 134, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+nav ul, nav ol {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 147, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+/* line 154, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 163, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+label {
+  cursor: pointer;
+}
+
+/* line 169, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+legend {
+  border: 0;
+  *margin-left: -7px;
+  padding: 0;
+  white-space: normal;
+}
+
+/* line 179, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+/* line 187, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+button, input {
+  line-height: normal;
+}
+
+/* line 194, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+button {
+  cursor: pointer;
+  -webkit-appearance: button;
+  *overflow: visible;
+}
+
+/* line 200, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+input[type="button"], input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+  *overflow: visible;
+}
+/* line 204, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+  *width: 13px;
+  *height: 13px;
+}
+/* line 209, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+/* line 214, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* line 219, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 226, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+/* line 235, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 239, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_reset.sass */
+td {
+  vertical-align: top;
+}
+
+/* line 15, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+form {
+  margin: 0 0 18px;
+}
+
+/* line 18, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/* line 24, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 27px;
+  line-height: 27px;
+  border: 0;
+  border-bottom: 1px solid #eeeeee;
+}
+/* line 33, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+legend small {
+  font-size: 13.5px;
+  color: #999999;
+}
+
+/* line 38, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* line 43, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+input,
+textarea,
+select,
+.uneditable-input {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  width: 210px;
+  height: 18px;
+  padding: 4px;
+  margin-bottom: 9px;
+  line-height: 18px;
+  color: #555555;
+  border: 1px solid #555555;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* line 7, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+input,
+textarea,
+select,
+.uneditable-input {
+  *display: inline;
+}
+
+/* line 58, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.uneditable-textarea {
+  width: auto;
+  height: auto;
+}
+
+/* line 63, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+label input,
+label textarea,
+label select {
+  display: block;
+}
+
+/* line 69, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+input[type="image"],
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 3px 0;
+  *margin-top: 0;
+  line-height: normal;
+  cursor: pointer;
+  border: 0 \9 ;
+}
+
+/* line 81, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+input[type="image"] {
+  border: 0;
+}
+
+/* line 85, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+input[type="file"] {
+  width: auto;
+  padding: initial;
+  line-height: initial;
+  border: initial;
+  background-color: initial;
+}
+
+/* line 93, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  width: auto;
+  height: auto;
+}
+
+/* line 100, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+select,
+input[type="file"] {
+  height: 28px;
+  *margin-top: 4px;
+  line-height: 28px;
+}
+
+/* line 107, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+input[type="file"] {
+  line-height: 18px \9;
+}
+
+/* line 112, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+select {
+  width: 220px;
+  background-color: white;
+}
+
+/* line 117, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+/* line 122, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+textarea {
+  height: auto;
+}
+
+/* line 127, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+input[type="hidden"] {
+  display: none;
+}
+
+/* line 134, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.radio,
+.checkbox {
+  padding-left: 18px;
+}
+
+/* line 138, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+  float: left;
+  margin-left: -18px;
+}
+
+/* line 145, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.controls > .radio:first-child,
+.controls > .checkbox:first-child {
+  padding-top: 5px;
+}
+
+/* line 152, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.radio.inline,
+.checkbox.inline {
+  padding-top: 5px;
+  margin-bottom: 0;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+}
+/* line 7, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.radio.inline,
+.checkbox.inline {
+  *display: inline;
+}
+
+/* line 158, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.radio.inline + .radio.inline,
+.checkbox.inline + .checkbox.inline {
+  margin-left: 10px;
+}
+
+/* line 164, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+input[class*="span"],
+select[class*="span"],
+textarea[class*="span"],
+.uneditable-input {
+  float: none;
+  margin-left: 0;
+}
+
+/* line 176, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+  background-color: #eeeeee;
+  border-color: #dddddd;
+  cursor: not-allowed;
+}
+
+/* line 193, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.control-group.warning > label,
+.control-group.warning .help-block,
+.control-group.warning .help-inline {
+  color: #c09853;
+}
+/* line 197, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.control-group.warning input,
+.control-group.warning select,
+.control-group.warning textarea {
+  color: #c09853;
+  border-color: #c09853;
+}
+/* line 202, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.control-group.warning .input-prepend .add-on,
+.control-group.warning .input-append .add-on {
+  color: #c09853;
+  border-color: #c09853;
+}
+/* line 208, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.control-group.error > label,
+.control-group.error .help-block,
+.control-group.error .help-inline {
+  color: #b94a48;
+}
+/* line 212, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.control-group.error input,
+.control-group.error select,
+.control-group.error textarea {
+  color: #b94a48;
+  border-color: #b94a48;
+}
+/* line 217, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.control-group.error .input-prepend .add-on,
+.control-group.error .input-append .add-on {
+  color: #b94a48;
+  border-color: #b94a48;
+}
+/* line 223, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.control-group.success > label,
+.control-group.success .help-block,
+.control-group.success .help-inline {
+  color: #468847;
+}
+/* line 228, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.control-group.success input,
+.control-group.success select,
+.control-group.success textarea {
+  color: #468847;
+  border-color: #468847;
+}
+/* line 234, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.control-group.success .input-prepend .add-on,
+.control-group.success .input-append .add-on {
+  color: #468847;
+  border-color: #468847;
+}
+
+/* line 241, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+input:focus:required:invalid,
+textarea:focus:required:invalid,
+select:focus:required:invalid {
+  color: #b94a48;
+  border-color: #ee5f5b;
+}
+
+/* line 251, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.form-actions {
+  padding: 17px 20px 18px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  background-color: #eeeeee;
+  border-top: 1px solid #dddddd;
+  zoom: 1;
+}
+/* line 3, /Users/perryroper/Sites/incuna-project/project/sass/globals/_mixins.sass */
+.form-actions:before, .form-actions:after {
+  content: "";
+  display: table;
+}
+/* line 6, /Users/perryroper/Sites/incuna-project/project/sass/globals/_mixins.sass */
+.form-actions:after {
+  clear: both;
+}
+
+/* line 261, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.uneditable-input {
+  display: block;
+  background-color: white;
+  border-color: #eeeeee;
+  cursor: not-allowed;
+}
+
+/* line 269, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+:-moz-placeholder {
+  color: #999999;
+}
+
+/* line 272, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+::-webkit-input-placeholder {
+  color: #999999;
+}
+
+/* line 279, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.help-block,
+.help-inline {
+  color: #555555;
+}
+
+/* line 284, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.help-block {
+  display: block;
+  margin-bottom: 9px;
+}
+
+/* line 289, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.help-inline {
+  padding-left: 5px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+}
+/* line 7, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.help-inline {
+  *display: inline;
+}
+
+/* line 303, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.form-search input,
+.form-search textarea,
+.form-search select,
+.form-search .help-inline,
+.form-search .uneditable-input,
+.form-search .input-prepend,
+.form-search .input-append,
+.form-inline input,
+.form-inline textarea,
+.form-inline select,
+.form-inline .help-inline,
+.form-inline .uneditable-input,
+.form-inline .input-prepend,
+.form-inline .input-append,
+.form-horizontal input,
+.form-horizontal textarea,
+.form-horizontal select,
+.form-horizontal .help-inline,
+.form-horizontal .uneditable-input,
+.form-horizontal .input-prepend,
+.form-horizontal .input-append {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  margin-bottom: 0;
+}
+/* line 7, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.form-search input,
+.form-search textarea,
+.form-search select,
+.form-search .help-inline,
+.form-search .uneditable-input,
+.form-search .input-prepend,
+.form-search .input-append,
+.form-inline input,
+.form-inline textarea,
+.form-inline select,
+.form-inline .help-inline,
+.form-inline .uneditable-input,
+.form-inline .input-prepend,
+.form-inline .input-append,
+.form-horizontal input,
+.form-horizontal textarea,
+.form-horizontal select,
+.form-horizontal .help-inline,
+.form-horizontal .uneditable-input,
+.form-horizontal .input-prepend,
+.form-horizontal .input-append {
+  *display: inline;
+}
+/* line 314, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.form-search .hide,
+.form-inline .hide,
+.form-horizontal .hide {
+  display: none;
+}
+
+/* line 317, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.form-search label,
+.form-inline label {
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+}
+/* line 7, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.form-search label,
+.form-inline label {
+  *display: inline;
+}
+
+/* line 322, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.form-search .input-append,
+.form-inline .input-append,
+.form-search .input-prepend,
+.form-inline .input-prepend {
+  margin-bottom: 0;
+}
+
+/* line 329, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.form-search .radio,
+.form-search .checkbox,
+.form-inline .radio,
+.form-inline .checkbox {
+  padding-left: 0;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+/* line 338, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.form-search .radio input[type="radio"],
+.form-search .checkbox input[type="checkbox"],
+.form-inline .radio input[type="radio"],
+.form-inline .checkbox input[type="checkbox"] {
+  float: left;
+  margin-left: 0;
+  margin-right: 3px;
+}
+
+/* line 347, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.control-group {
+  margin-bottom: 9px;
+  zoom: 1;
+}
+/* line 3, /Users/perryroper/Sites/incuna-project/project/sass/globals/_mixins.sass */
+.control-group:before, .control-group:after {
+  content: "";
+  display: table;
+}
+/* line 6, /Users/perryroper/Sites/incuna-project/project/sass/globals/_mixins.sass */
+.control-group:after {
+  clear: both;
+}
+
+/* line 352, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+legend + .control-group {
+  margin-top: 18px;
+  -webkit-margin-top-collapse: separate;
+}
+
+/* line 362, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.form-horizontal .control-group {
+  margin-bottom: 18px;
+}
+/* line 366, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.form-horizontal .control-label {
+  float: left;
+  width: 140px;
+  padding-top: 5px;
+  text-align: right;
+}
+/* line 373, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.form-horizontal .controls {
+  margin-left: 160px;
+  *display: inline-block;
+  *margin-left: 0;
+  *padding-left: 20px;
+}
+/* line 381, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.form-horizontal .help-block {
+  margin-top: 9px;
+  margin-bottom: 0;
+}
+/* line 386, /Users/perryroper/Sites/incuna-project/project/sass/shared/_forms.sass */
+.form-horizontal .form-actions {
+  padding-left: 160px;
+}
+
+@media print {
+  /* line 7, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_print.sass */
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  /* line 15, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_print.sass */
+  a {
+    text-decoration: underline;
+  }
+  /* line 17, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_print.sass */
+  a:visited {
+    text-decoration: underline;
+  }
+  /* line 19, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_print.sass */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 21, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_print.sass */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /* line 24, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_print.sass */
+  a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+
+  /* line 27, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_print.sass */
+  pre, blockquote {
+    border: 1px solid #999999;
+    page-break-inside: avoid;
+  }
+
+  /* line 30, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_print.sass */
+  thead {
+    display: table-header-group;
+  }
+
+  /* line 33, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_print.sass */
+  tr {
+    page-break-inside: avoid;
+  }
+
+  /* line 35, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_print.sass */
+  img {
+    page-break-inside: avoid;
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  /* line 41, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_print.sass */
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 44, /Users/perryroper/Sites/incuna-project/project/sass/plugins/_print.sass */
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}

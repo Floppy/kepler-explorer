@@ -1,0 +1,52 @@
+// Recommended directory structure
+// sass
+// ├── components
+// │   ├── _header.sass
+// │   └── _footer.sass
+// ├── globals
+// │   ├── _mixins.sass
+// │   ├── _variables.sass
+// ├── plugins (add version numbers inside file if applicable)
+// │   ├── _fancybox.sass
+// │   ├── _print.sass
+// │   └── _reset.sass
+// ├── sections
+// │   ├── _dashboard.sass
+// │   ├── _profile.sass
+// └── shared
+//     ├── _forms.sass
+//     └── _markdown.sass
+
+// Recommended reading material:
+// https://github.com/styleguide/css
+// http://smacss.com/book/ (free)
+
+// Basic rules
+// - Do not overqualify selectors with element names
+//   Read: http://goo.gl/rz8qm
+//   - eg. div.className img#className
+// - Avoid nesting more than 3 levels deep, for the same reasons as above
+// - Use // for commenting, avoid using /* */
+// - Try and keep the size of your sass files to a minimum, split code up into seperate files where nessesary
+
+
+// Import compass - http://compass-style.org/
+@import compass/css3
+
+// Custom mixins not found in compass
+@import globals/mixins
+
+// Variables defining fonts, colours and other widely reused data
+@import globals/variables
+
+// HTML5 boilerplate defaults
+@import plugins/reset
+
+//@import plugins/fancybox
+
+// Import other files here
+@import shared/forms
+@import shared/buttons
+
+// Print styles, keep these at the bottom
+@import plugins/print

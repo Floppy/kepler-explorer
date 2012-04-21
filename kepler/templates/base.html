@@ -1,0 +1,127 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+
+  {% if not DEVELOPMENT_SITE %}
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  {% endif %}
+
+  <title>{% block title %}{% endblock title %}</title>
+
+  <meta name="viewport" content="width=device-width">
+
+  {% block base_style %}
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css">
+  {% endblock base_style %}
+
+  {% block extra_style %}{% endblock extra_style %}
+
+  {% block modernizr %}
+  <script src="{{ STATIC_MEDIA }}/scripts/libs/modernizr-2.5.3.min.js"></script>
+  {% endblock %}
+
+  {% block jquery_js %}
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}scripts/libs/jquery-1.7.2.min.js"><\/script>')</script>
+  {% endblock jquery_js %}
+
+  {# Include your plugins before main.js and your other JS after main.js #}
+
+  <script src="{{ STATIC_URL }}scripts/main.js"></script>
+
+
+  {% block extra_script %}{% endblock extra_script %}
+
+  {% block extra_head %}{% endblock extra_head %}
+
+  {% if DEVELOPMENT_SITE %}
+  <meta name="robots" content="noindex, nofollow">
+  {% endif %}
+
+</head>
+
+{% block body %}
+<body id="page-{% block bodyid %}{% endblock bodyid %}" class="{% block bodyclass %}{% endblock bodyclass %}">
+    {% block pre_wrap %}{% endblock pre_wrap %}
+    {% block wrap %}
+    <div id="wrap">
+        {% block wrap_content %}
+            {% block preheader %}
+            {% comment %}
+                <header id="site-preheader">
+                    <div class="structure">
+                        {% block preheader_content %}{% endblock preheader_content %}
+                    </div>
+                </header>
+            {% endcomment %}
+            {% endblock preheader %}
+
+            {% block header %}
+                <header id="site-header">
+                    <div class="structure">
+                        {% block header_content %}
+                        <nav id="site-nav">
+                        </nav>
+                        {% endblock header_content %}
+                    </div>
+                </header>
+            {% endblock header %}
+
+            {% block page %}
+                <div id="site-main">
+                    {% if messages %}
+                        {% block messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endblock messages %}
+                    {% endif %}
+                    <div class="structure">
+                        {% block page_title %}
+                            <h2>Title</h2>
+                        {% endblock page_title %}
+                        {% block page_content %}
+                            {% block content %}
+                                [Content]
+                            {% endblock content %}
+                        {% endblock page_content %}
+                    </div>
+                </div>
+            {% endblock page %}
+
+            {% block footer %}
+                <footer id="site-footer">
+                    <div class="structure">
+                        {% block footer_content %}
+                            [Footer]
+                        {% endblock footer_content %}
+                    </div>
+                </footer>
+            {% endblock footer %}
+        {% endblock wrap_content %}
+    </div>
+    {% endblock wrap %}
+    {% block post_wrap %}{% endblock post_wrap %}
+
+
+
+  {% block google_analytics %}
+  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.-->
+  <script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+  {% endblock %}
+
+</body>
+{% endblock %}
+</html>
