@@ -5,7 +5,7 @@ class SolarSystem(models.Model):
     """
     A star is a massive, luminous sphere of plasma held together by gravity.
     """
-    name = models.CharField(max_length=64,
+    name = models.CharField(max_length=64, unique=True,
             help_text=_('Name for primary star'))
     magnitude = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True,
             help_text=_('Magnitude'))
@@ -34,7 +34,7 @@ class SolarSystem(models.Model):
 
 class Planet(models.Model):
     """A planet is a celestial body orbiting a star"""
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
     solar_system = models.ForeignKey('celestial.SolarSystem', related_name='planets')
     radius = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True,
             help_text=_('Planetary radius in Earth radii (6378 km) Product of r/R* and the stellar radius'))
