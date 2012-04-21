@@ -4,4 +4,21 @@
 
 {% block content %}
 <h3>System: <a href="{{ planet.solar_system.get_absolute_url }}">{{ planet.solar_system }}</a>
+    <dl>
+        <dt>Time to circumnavigate by airbus a380</dt>
+        <dd>{{ planet.time_to_go_circumnavigate_by_airbus_a380 }}</dd>
+        <dt>Time to boil tea</dt>
+        <dd>{{ planet.time_to_boil_tea }}</dd>
+        <dt>Time to freeze lolly</dt>
+        <dd>{{ planet.time_to_freeze_lolly }}</dd>
+        <dt>Age in planet years</dt>
+        <dd>{{ planet.age_in_planet_years }}</dd>
+        <dt>Time to planet by spacecraft</dt>
+        <dd>{{ planet.time_to_planet_by_spacecraft }}</dd>
+        <dt>Time to planet by car</dt>
+        <dd>{{ planet.time_to_planet_by_car }}</dd>
+        <dt>Size of star in sky</dt>
+        <dd>{{ planet.size_of_star_in_sky }}</dd>
+    </dl>
+
 {% endblock %}
