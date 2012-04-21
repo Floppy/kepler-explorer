@@ -103,3 +103,31 @@ def size_of_star_in_sky(star_radius, star_distance):
     """
     # 2* because we only give radius (not diameter), 180/pi to convert to degrees
     return 2*atan2(star_radius, star_distance)*180/pi
+
+def colour_of_star(temperature):
+    """
+    Calculates the colour of the star based on its temperature
+    
+    tmperature - the temperature of the star in K
+    
+    returns a string representing the HTML colour of the star
+    """
+    # Colours based on data here:
+    # http://outreach.atnf.csiro.au/education/senior/astrophysics/photometry_colour.html
+    
+    if (temperature > 28000):
+        return "#9bb0ff"
+    elif (temperature > 10000):
+        return "#aabfff"
+    elif (temperature > 7500):
+        return "#cad7ff"
+    elif (temperature > 6000):
+        return "#f8f7ff"
+    elif (temperature > 4900):
+        return "#fff4ea"
+    elif (temperature > 3500):
+        return "#ffd2a1"
+    else:
+        return "#ffccdf"
+
+    

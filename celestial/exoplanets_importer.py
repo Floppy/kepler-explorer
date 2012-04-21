@@ -1,6 +1,7 @@
 import requests
 import csv
 from models import Planet, SolarSystem
+from django.core.exceptions import ValidationError
 
 class ExoplanetsImporter:
     @staticmethod
@@ -21,10 +22,20 @@ class ExoplanetsImporter:
                     colnum += 1
                 got_headers = True
             else:
-                # Find system
-                system, created = SolarSystem.objects.get_or_create(name = row[headers['STAR']])
-                Planet.objects.get_or_create(name = row[headers['NAME']],
-                                             #radius = row[headers['R']],
-                                             #temperature = row[headers['NAME']],
-                                             #semi_major_axis = row[headers['A']],
-                                             solar_system = system)
+                # Find and store system data
+                try:
+                    system, created = SolarSystem.objects.get_or_create(name = row[headers['STAR']])
+                    system.temperature = row[headers['TEFF']] or None
+                    system.save()
+                except ValidationError:
+                    print stardata
+                    raise
+                # Find and store planet data
+                try:
+                    planet, created = Planet.objects.get_or_create(name = row[headers['NAME']], solar_system = system)
+                    planet.radius = row[headers['R']] or None
+                    planet.semi_major_axis = row[headers['A']]
+                    planet.save()
+                except ValidationError:
+                    print planetdata
+                    raise
