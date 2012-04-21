@@ -184,13 +184,13 @@ class Planet(models.Model):
 
         if not self.solar_system.radius:
             return ''
-        if not self.solar_system.distance:
+        if not self.semi_major_axis:
             return ''
 
-        # Radius is in AU, so convert to km
-        radius = self.solar_system.radius * 149598000
-        # Distance is in parsecs, so convert to km
-        distance = self.solar_system.distance * Decimal('3.08568025e13')
+        # Radius is in AU
+        radius = self.solar_system.radius
+        # Semi-major axis of orbit in AU 
+        distance = self.semi_major_axis
 
         # 2* because we only give radius (not diameter), 180/pi to convert to degrees
         return 2*atan2(radius, distance)*180/pi
