@@ -21,8 +21,8 @@ class ExoplanetsImporter:
             else:
                 # Find system
                 system, created = SolarSystem.objects.get_or_create(name = row[headers['STAR']])
-                Planet.objects.create(name = row[headers['NAME']],
-                                      #radius = row[headers['R']],
-                                      #temperature = row[headers['NAME']],
-                                      #semi_major_axis = row[headers['A']],
-                                      solar_system = system)
+                Planet.objects.get_or_create(name = row[headers['NAME']],
+                                             #radius = row[headers['R']],
+                                             #temperature = row[headers['NAME']],
+                                             #semi_major_axis = row[headers['A']],
+                                             solar_system = system)
