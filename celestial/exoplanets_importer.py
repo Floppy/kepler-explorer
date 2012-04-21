@@ -4,9 +4,11 @@ from models import Planet, SolarSystem
 
 class ExoplanetsImporter:
     @staticmethod
-    def run():
-        csv_data = open('./exoplanets.csv')
-        #csv_data = requests.get('http://exoplanets.org/exoplanets.csv').text
+    def run(filename = None):
+        if filename!=None:
+            csv_data = open(filename)
+        else:
+            csv_data = requests.get('http://exoplanets.org/exoplanets.csv')
         rows = csv.reader(csv_data)
         headers = {}
         got_headers = False
