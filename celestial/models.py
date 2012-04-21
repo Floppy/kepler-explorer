@@ -7,17 +7,17 @@ class SolarSystem(models.Model):
     """
     name = models.CharField(max_length=64, unique=True,
             help_text=_('Name for primary star'))
-    magnitude = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True,
+    magnitude = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
             help_text=_('Magnitude'))
-    radius = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True,
+    radius = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
             help_text=_('Radius of primary star'))
-    temperature = models.IntegerField(null=True, blank=True,
+    temperature = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
             help_text=_('Surface temperature of star'))
     right_ascension = models.CharField(max_length=32,
             help_text=_('Right Ascension'))
     declination = models.CharField(max_length=32,
             help_text=_('Declination'))
-    distance = models.DecimalField(max_digits=7, decimal_places=3, null=True, blank=True,
+    distance = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
             help_text=_('Distance from Earth'))
 
     class Meta:
@@ -36,11 +36,11 @@ class Planet(models.Model):
     """A planet is a celestial body orbiting a star"""
     name = models.CharField(max_length=255, unique=True)
     solar_system = models.ForeignKey('celestial.SolarSystem', related_name='planets')
-    radius = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True,
+    radius = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
             help_text=_('Planetary radius in Earth radii (6378 km) Product of r/R* and the stellar radius'))
-    temperature = models.IntegerField(null=True, blank=True,
+    temperature = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
             help_text=_('Equilibrium surface temperature of planet'))
-    semi_major_axis = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True,
+    semi_major_axis = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
             help_text=_('''Semi-major axis of orbit in AU based on Newton's generalization of Kepler's third law'''))
 
     class Meta:
