@@ -6,39 +6,80 @@
 {% block content %}
 	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class='starfield'>
 	    {% for system in object_list %}
-	        <a class='star' id='star{{system.id}}' xlink:href="{{ system.get_absolute_url }}" xlink:title='{{system}}' data-distance='{{system.distance}}'>
-	        	<circle cx="{{system.right_ascension|right_ascension:100}}%" cy="{{system.declination|declination:100}}%" r="{{system.radius|stellar_radius}}" fill="{{system.colour_of_star}}" onmouseover="$('#system-name-tip').text('{{system.name}}');" onmouseout="$('#system-name-tip').text('');"/>
-	        </a>
+	        <a class='star' id='star{{system.id}}' xlink:href="{{ system.get_absolute_url }}" xlink:title='{{system}}' data-distance='{{system.distance}}' data-magnitude='{{system.magnitude}}' data-size='{{ system.radius}}'>
+	        	<circle cx="{% xpos system.right_ascension system.declination 100 %}%" cy="{% ypos system.right_ascension system.declination 100 %}%" r="{{system.radius|stellar_radius}}" fill="{{system.colour_of_star}}" onmouseover="$('#system-name-tip').text('{{system.name}}');" onmouseout="$('#system-name-tip').text('');"/>
+  	        </a>
 	    {% endfor %}
 	</svg>
 	<div style="color: white; position:absolute; top: 10px; left: 10px;">
-		Distance from Earth <div class="slider" id="distance-slider" style='width: 250px; display: inline-block'></div>
+		Maximum distance from Earth <div class="slider" id="distance-slider" style='width: 250px; position:absolute; left:200px; display: inline-block'></div><br>
+        Minimum brightness of star  <div class="slider" id="magnitude-slider" style='width: 250px;  position:absolute; left:200px;  display: inline-block'></div><br>
+        Maximum size of star  <div class="slider" id="size-slider" style='width: 250px;  position:absolute; left:200px;  display: inline-block'></div>
 	</div>
+
+    <div id="background">
+        <img src="../static/images/hemi.png" class="stretch" alt="" />
+    </div>
 
 	<div id='system-name-tip' style="color: white; position:absolute; top:100px; left: 10px"></div>
 
 	<script>
+        function drawStars(maxDistance, minMagnitude, maxRadius) {
+            $("a.star").each(function(index, star) {
+                // Get distance from element
+                distance = parseFloat(star.getAttribute("data-distance"));
+                // Handle missing distances
+                if (isNaN(distance))
+                    distance = 100000;
+                // Get magnitude from element
+                magnitude = parseFloat(star.getAttribute("data-magnitude"));
+                // Handle missing distances
+                if (isNaN(magnitude))
+                    magnitude = 0;
+                radius = parseFloat(star.getAttribute("data-size")) * 1000
+                var show = true
+                if (magnitude < minMagnitude)
+                    show = false;
+                if (Math.log(distance) > maxDistance)
+                    show = false;
+                if(radius > maxRadius)
+                    show = false
+                if (show)
+                    $("#"+star.id).show(); // Can't show and hide star directly for some reason. Because SVG or something.
+                else
+                    $("#"+star.id).hide();
+            });
+        }
 		$(function() {
+            var maxDistance = 10;
+            var minMagnitude = 1;
+            var maxRadius = 12
 			$( "#distance-slider" ).slider({ max: 10, 
 				                             min: 3,
  											 step: 0.1,
 											 value: 10,
 										 	 slide: function(event, ui) {
-												 max = parseFloat(ui.value);
-												 $("a.star").each(function(index, star) {
-													 // Get distance from element
-													 distance = parseFloat(star.getAttribute("data-distance"));
- 													 // Handle missing distances
- 													 if (isNaN(distance))
-													 	distance = 100000;
-													 // Show/hide based on log of distance to make things easier to use.
-													 if (Math.log(distance) <= max)
-														 $("#"+star.id).show(); // Can't show and hide star directly for some reason. Because SVG or something.
-													 else
-														 $("#"+star.id).hide();
-												 });
+												 maxDistance = parseFloat(ui.value);
+                                                 drawStars(maxDistance, minMagnitude, maxRadius)
 										 	 }});
+            $( "#magnitude-slider" ).slider({ max: 17,
+                                              min: 1,
+                                              step: 0.25,
+                                              value: 1,
+                                              slide: function(event, ui) {
+                                                  minMagnitude = parseFloat(ui.value);
+                                                  drawStars(maxDistance, minMagnitude, maxRadius)
+                                              }});
+            $( "#size-slider" ).slider({ max: 12,
+                                              min: 0.5,
+                                              step: 0.25,
+                                              value: 12,
+                                              slide: function(event, ui) {
+                                                  maxRadius = parseFloat(ui.value);
+                                                  drawStars(maxDistance, minMagnitude, maxRadius)
+                                              }});
 		});
+
 	</script>
 
 {% endblock %}
