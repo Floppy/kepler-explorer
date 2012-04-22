@@ -29,6 +29,7 @@ $(document).ready(function () {
                         },
             update:     function () {
                             this.weight_on_planet = (this.weight_on_earth / 9.81) * gravity; 
+                            this.vertical_jump = 35 * (9.81/gravity); 
                         }
         });
 

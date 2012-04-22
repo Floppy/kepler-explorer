@@ -16,10 +16,6 @@
         <dt>Time to freeze lolly</dt>
         <dd>{{ planet.time_to_freeze_lolly }}</dd>
         {% endif %}
-        {% if planet.age_in_planet_years %}
-        <dt>Age in planet years</dt>
-        <dd>{{ planet.age_in_planet_years }}</dd>
-        {% endif %}
         {% if planet.time_to_planet_by_spacecraft %}
         <dt>Time to planet by spacecraft</dt>
         <dd>{{ planet.time_to_planet_by_spacecraft|intcomma }} years</dd>
@@ -37,8 +33,9 @@
 
     {% if planet.gravity %}
         <div>
-            I weigh <span data-var="weight_on_earth"  data-min="10" data-max="100" class="TKAdjustableNumber"> kg on Earth</span>, but I'd weigh
-            <span data-var='weight_on_planet' data-format="%d"> kg on {{planet.name}}</span>.
+        I weigh <span data-var="weight_on_earth"  data-min="10" data-max="100" class="TKAdjustableNumber"> kg on Earth</span>, but I'd weigh
+        <span data-var='weight_on_planet' data-format="%d"> kg on {{planet.name}}</span>. I could jump 
+		<span data-var='vertical_jump' data-format="%d"> cm into the air</span>.
         </div>
     {% endif %}
 </div>
