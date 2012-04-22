@@ -19,7 +19,7 @@ SERVER_EMAIL = DEFAULT_FROM_EMAIL = "max@incuna.com"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'db.sqlite',                      # Or path to database file if using sqlite3.
+        'NAME': os.path.join(os.path.dirname(DIRNAME), 'db.sqlite'), # Or path to database file if
         'USER': 'kepler',                      # Not used with sqlite3.
         'PASSWORD': '0y--DB_PASSWORD--)nr=9',                  # Not used with sqlite3.
         'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
