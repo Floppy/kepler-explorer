@@ -11,6 +11,10 @@ $(document).ready(function () {
             color = $(this).data('color'),
             radius = size_in_sky/90*(canvas.width*1.5);
 			size_of_sol = 0.53/90*(canvas.width*1.5);
+
+        canvas.width  = planet.width();
+        //canvas.height = planet.width();
+        
         drawSky(canvas, {
             startRadius: radius,
             // TODO: There must be a more scientific calculation for the end radius. 
