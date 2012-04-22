@@ -6,10 +6,36 @@
 {% block content %}
 	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class='starfield'>
 	    {% for system in object_list %}
-	        <a class='star' xlink:href="{{ system.get_absolute_url }}" xlink:title='{{system}}'>
+	        <a class='star' id='star{{system.id}}' xlink:href="{{ system.get_absolute_url }}" xlink:title='{{system}}' data-distance='{{system.distance}}'>
 	        	<circle cx="{{system.right_ascension|right_ascension:100}}%" cy="{{system.declination|declination:100}}%" r="{{system.radius|stellar_radius}}" fill="{{system.colour_of_star}}"/>
 	        </a>
 	    {% endfor %}
 	</svg>
+	<div class="slider" id="distance-slider" style="position:absolute; top: 10px; left: 10px; width: 250px"></div>
+
+	<script>
+		$(function() {
+			$( "#distance-slider" ).slider({ max: 10, 
+				                             min: 3,
+ 											 step: 0.1,
+											 value: 10,
+										 	 slide: function(event, ui) {
+												 max = parseFloat(ui.value);
+												 $("a.star").each(function(index, star) {
+													 // Get distance from element
+													 distance = parseFloat(star.getAttribute("data-distance"));
+ 													 // Handle missing distances
+ 													 if (isNaN(distance))
+													 	distance = 100000;
+													 // Show/hide based on log of distance to make things easier to use.
+													 if (Math.log(distance) <= max)
+														 $("#"+star.id).show(); // Can't show and hide star directly for some reason. Because SVG or something.
+													 else
+														 $("#"+star.id).hide();
+												 });
+										 	 }});
+		});
+	</script>
+
 {% endblock %}
 
