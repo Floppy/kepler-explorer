@@ -30,6 +30,7 @@
                 },
                 update:     function () {
                     this.weight_on_planet = (this.weight_on_earth / 9.81) * gravity; 
+                    this.vertical_jump = 35 * (9.81/gravity); 
                 }
             });
             
@@ -74,8 +75,9 @@
 
     {% if planet.gravity %}
         <div>
-            I weigh <span data-var="weight_on_earth"  data-min="10" data-max="100" class="TKAdjustableNumber"> kg on Earth</span>, but I'd weigh
-            <span data-var='weight_on_planet' data-format="%d"> kg on {{planet.name}}</span>.
+        I weigh <span data-var="weight_on_earth"  data-min="10" data-max="100" class="TKAdjustableNumber"> kg on Earth</span>, but I'd weigh
+        <span data-var='weight_on_planet' data-format="%d"> kg on {{planet.name}}</span>. I could jump 
+		<span data-var='vertical_jump' data-format="%d"> cm into the air</span>.
         </div>
     {% endif %}
 </div>
