@@ -46,56 +46,44 @@
         <dt>Time to planet by car</dt>
         <dd>{{ planet.time_to_planet_by_car|intcomma }} years</dd>
         {% endif %}
-        <dt>Age on planet (I am <div class='slider' style='margin: 0px 5px; display: inline-block; width:200px' id='slider-age'></div> <span id='my-age'></span> years old on Earth)</dt>
-        <dd>
-			<span id='age-on-planet'></span> years
-			<script>
-				var period = {{planet.orbital_period}};
-				function update_age(my_age) {
-					$('#my-age').text(my_age);
-					$('#age-on-planet').text(my_age * (365.256363 / period));
-				}
-				$(function() {
-					$('#slider-age').slider({
-						max: 100,
-						min: 1,
-						value: 15,
-						step: 1,
-						slide: function(event, ui) {
-							update_age(parseFloat(ui.value));
-						}
-					});
-					update_age(15.0);
+	</dl>
+	
+	<div>
+		I'm <span data-var="age_on_earth" data-min="1" data-max="100" class="TKAdjustableNumber"> years old on Earth</span>, but I'd be
+		<span data-var='age_on_planet' data-format="%d"> years old on {{planet.name}}</span>.
+		<script>
+			var period = {{planet.orbital_period}};
+			$(function() {
+				var tangle = new Tangle(document, {
+				    initialize: function () { 
+						this.age_on_earth = 15; 
+					},
+				    update:     function () {
+						this.age_on_planet = this.age_on_earth * (365.256363 / period); 
+					}
 				});
-			</script>
-		</dd>
-		{% if planet.gravity %}
-        <dt>Weight on planet (I weigh <div class='slider' style='margin: 0px 5px; display: inline-block; width:200px' id='slider-weight'></div> <span id='my-weight'></span> kg on Earth)</dt>
-        <dd>
-			<span id='weight-on-planet'></span> kg, the same as <span id='number-of-cows'></span> cows
+			});
+		</script>
+	</div>
+	
+	{% if planet.gravity %}
+		<div>
+			I weigh <span data-var="weight_on_earth"  data-min="10" data-max="100" class="TKAdjustableNumber"> kg on Earth</span>, but I'd weigh
+			<span data-var='weight_on_planet' data-format="%d"> kg on {{planet.name}}</span>.
 			<script>
 				var gravity = {{planet.gravity}};
-				function update_weight(my_weight) {
-					$('#my-weight').text(my_weight);
-					new_weight = (my_weight / 9.81) * gravity;
-					$('#weight-on-planet').text(new_weight);
-					$('#number-of-cows').text(new_weight / 750);
-				}
 				$(function() {
-					$('#slider-weight').slider({
-						max: 100,
-						min: 1,
-						value: 50,
-						step: 1,
-						slide: function(event, ui) {
-							update_weight(parseFloat(ui.value));
+					var tangle = new Tangle(document, {
+					    initialize: function () { 
+							this.weight_on_earth = 50; 
+						},
+					    update:     function () {
+							this.weight_on_planet = (this.weight_on_earth / 9.81) * gravity; 
 						}
 					});
-					update_weight(50.0);
 				});
 			</script>
-		</dd>
-		{% endif %}
-    </dl>
+		</div>
+	{% endif %}
 
 {% endblock %}
