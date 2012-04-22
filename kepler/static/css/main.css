@@ -751,6 +751,11 @@ a.star:hover circle {
   stroke-width: 3px;
 }
 
+/* line 16, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+.factoid {
+  font-size: 200%;
+}
+
 @media print {
   /* line 7, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_print.sass */
   * {
