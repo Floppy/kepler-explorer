@@ -2,30 +2,38 @@ $(document).ready(function () {
     // planet tabs
     $(".planets" ).tabs();
 
+    function drawCanvas() {
+        $('.planet').each(function () {
+            var planet = $(this);
+            // canvas
+            var canvas = planet.find('canvas.planetCanvas').get(0),
+                size_in_sky = $(this).data('size'), // radius of sky
+                color = $(this).data('color'),
+                radius = size_in_sky/90*(canvas.width*1.5);
+                size_of_sol = 0.53/90*(canvas.width*1.5);
+
+            canvas.getContext("2d").clearRect(0,0,canvas.width,canvas.height);
+            drawSky(canvas, {
+                startRadius: radius,
+                endRadius: radius*15
+            });
+            drawStar(canvas, {radius: radius, color: color});
+            drawOutline(canvas, {radius: size_of_sol});
+
+        });
+    }
+
+    // resize the canvas
+    $(window).resize(function () {
+        var planets = $('.planet');
+        planets.find('canvas.planetCanvas').width(planets.filter(':visible:first').width())
+        //planets.find('canvas.planetCanvas').height($(window).height()-planets.filter(':visible:first').offset().top)
+        drawCanvas();
+    }).resize();
+
     // initialise planet
     $('.planet').each(function () {
         var planet = $(this);
-        // canvas
-        var canvas = planet.find('canvas.planetCanvas').get(0),
-            size_in_sky = $(this).data('size'), // radius of sky
-            color = $(this).data('color'),
-            radius = size_in_sky/90*(canvas.width*1.5);
-			size_of_sol = 0.53/90*(canvas.width*1.5);
-
-        //canvas.width  = planet.width();
-        /*$(window).resize(function() {
-            canvas.width  = planet.width();
-            //canvas.height = planet.height();
-        }).resize();*/
-        
-        
-        drawSky(canvas, {
-            startRadius: radius,
-            // TODO: There must be a more scientific calculation for the end radius. 
-            endRadius: radius*15
-        });
-        drawStar(canvas, {radius: radius, color: color});
-        drawOutline(canvas, {radius: size_of_sol});
 
         // Age
         var period = $(this).data('period'),
