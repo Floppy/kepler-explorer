@@ -12,8 +12,12 @@ $(document).ready(function () {
             radius = size_in_sky/90*(canvas.width*1.5);
 			size_of_sol = 0.53/90*(canvas.width*1.5);
 
-        canvas.width  = planet.width();
-        //canvas.height = planet.width();
+        //canvas.width  = planet.width();
+        /*$(window).resize(function() {
+            canvas.width  = planet.width();
+            //canvas.height = planet.height();
+        }).resize();*/
+        
         
         drawSky(canvas, {
             startRadius: radius,
