@@ -23,7 +23,7 @@
   {% block extra_style %}{% endblock extra_style %}
 
   {% block modernizr %}
-  <script src="{{ STATIC_MEDIA }}/scripts/libs/modernizr-2.5.3.min.js"></script>
+  <!--<script src="{{ STATIC_MEDIA }}/scripts/libs/modernizr-2.5.3.min.js"></script>-->
   {% endblock %}
 
   {% block jquery_js %}
@@ -33,6 +33,13 @@
   {% endblock jquery_js %}
 
   {# Include your plugins before main.js and your other JS after main.js #}
+
+  <script src="{{ STATIC_URL }}scripts/Tangle.js"></script>
+  <link rel="stylesheet" href="{{ STATIC_URL }}scripts/TangleKit/TangleKit.css" type="text/css">
+  <script type="text/javascript" src="{{ STATIC_URL }}scripts/TangleKit/mootools.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}scripts/TangleKit/sprintf.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}scripts/TangleKit/BVTouchable.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}scripts/TangleKit/TangleKit.js"></script>
 
   <script src="{{ STATIC_URL }}scripts/main.js"></script>
 
