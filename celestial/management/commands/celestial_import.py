@@ -9,3 +9,5 @@ class Command(BaseCommand):
             ExoplanetsImporter.run(*args)
         else:
             ExoplanetsImporter.run()
+        # Import sol data
+        ExoplanetsImporter.run("celestial/data/sol.csv")

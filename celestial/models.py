@@ -9,17 +9,17 @@ class SolarSystem(models.Model):
     """
     name = models.CharField(max_length=64, unique=True,
             help_text=_('Name for primary star'))
-    magnitude = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
+    magnitude = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True,
             help_text=_('Magnitude'))
-    radius = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
+    radius = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True,
             help_text=_('Radius of primary star (in AU)'))
-    temperature = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
+    temperature = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True,
             help_text=_('Surface temperature of star'))
-    right_ascension = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
+    right_ascension = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True,
             help_text=_('Right Ascension'))
-    declination = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
+    declination = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True,
             help_text=_('Declination'))
-    distance = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
+    distance = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True,
             help_text=_('Distance from Earth'))
 
     class Meta:
@@ -66,17 +66,17 @@ class Planet(models.Model):
     """A planet is a celestial body orbiting a star"""
     name = models.CharField(max_length=255, unique=True)
     solar_system = models.ForeignKey('celestial.SolarSystem', related_name='planets')
-    radius = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
+    radius = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True,
             help_text=_('Planetary radius in Jupiter radii (71492 km) Product of r/R* and the stellar radius'))
-    temperature = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
+    temperature = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True,
             help_text=_('Equilibrium surface temperature of planet'))
-    semi_major_axis = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
+    semi_major_axis = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True,
             help_text=_('''Semi-major axis of orbit in AU based on Newton's generalization of Kepler's third law'''))
-    density = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
+    density = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True,
             help_text=_('''Density of planet'''))
-    gravity = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
+    gravity = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True,
             help_text=_('''Strength of gravity on surface'''))
-    orbital_period = models.DecimalField(max_digits=14, decimal_places=10, null=True, blank=True,
+    orbital_period = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True,
             help_text=_('''Time take to rotate around the star once'''))
 
 

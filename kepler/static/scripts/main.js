@@ -9,8 +9,8 @@ $(document).ready(function () {
         var canvas = planet.find('canvas.planetCanvas').get(0),
             size_in_sky = $(this).data('size'), // radius of sky
             color = $(this).data('color'),
-            radius = size_in_sky/90*canvas.width;
-			size_of_sol = 1/90*canvas.width;
+            radius = size_in_sky/90*(canvas.width*1.5);
+			size_of_sol = 0.53/90*(canvas.width*1.5);
         drawSky(canvas, {
             startRadius: radius,
             // TODO: There must be a more scientific calculation for the end radius. 

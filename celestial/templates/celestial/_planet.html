@@ -26,6 +26,10 @@
         <dd>{{ planet.time_to_planet_by_car|intcomma }} years</dd>
         {% endif %}
     </dl>
+	 <div>
+		I'm <span data-var="age_on_earth" data-min="1" data-max="100" class="TKAdjustableNumber"> years old on Earth</span>, but I'd be
+		<span data-var='age_on_planet' data-format="%d"> years old on {{planet.name}}</span>.	  	
+	</div>
 
     {% if planet.gravity %}
         <div>
