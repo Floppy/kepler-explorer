@@ -1,13 +1,22 @@
 {% extends 'celestial/base.html' %}
 
-{% block page_title %}<h2>System: {{ object }}</h2>{% endblock %}
+{% load url from future %}
+
+{% block page_title %}<h2><a href="{% url 'system-list' %}">Systems</a> / {{ object }}</h2>{% endblock %}
 
 {% block content %}
 {% if object.planets.count %}
 <div class="planets">
+    <ul>
+        {% for planet in planets %}
+        <li><a href="#planet-{{ planet.pk }}">{{ planet }}</a></li>
+        {% endfor %}
+    </ul>
+    
     {% for planet in planets %}
-    <a href="{{ planet.get_absolute_url }}">{{ planet }}</a></li>
-    {% include 'celestial/_planet.html' %}
+    <div id="planet-{{ planet.pk }}">
+        {% include 'celestial/_planet.html' %}
+    </div>
     {% endfor %}
 </div>
 {% else %}

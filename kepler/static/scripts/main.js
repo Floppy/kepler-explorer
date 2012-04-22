@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    // planet tabs
+    $(".planets" ).tabs();
+
+    // initialise planet
     $('.planet').each(function () {
         var planet = $(this);
         // canvas
