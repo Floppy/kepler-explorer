@@ -2,7 +2,7 @@
 Django>=1.4
 #django-mptt>=0.5.1
 #django-pagination>=1.0.7
-#gunicorn>=0.13.4
+gunicorn>=0.13.4
 #django-crispy-forms>=1.1.2
 #django-compressor>=1.1.2
 
