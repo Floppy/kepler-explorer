@@ -194,7 +194,7 @@ INSTALLED_APPS = (
     #'easy-thumbnails',
     #'compressor',
     'south',
-    #'gunicorn',
+    'gunicorn',
     # django apps
     'django.contrib.humanize',
     'django.contrib.auth',
