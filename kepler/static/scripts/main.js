@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    console.log('ready');
     $('.planet').each(function () {
         var planet = $(this);
         // canvas
@@ -8,7 +7,11 @@ $(document).ready(function () {
             color = $(this).data('color'),
             radius = size_in_sky/90*canvas.width;
 			size_of_sol = 1/90*canvas.width;
-        drawSky(canvas);
+        drawSky(canvas, {
+            startRadius: radius,
+            // TODO: There must be a more scientific calculation for the end radius. 
+            endRadius: radius*15
+        });
         drawStar(canvas, {radius: radius, color: color});
         drawOutline(canvas, {radius: size_of_sol});
 
@@ -41,11 +44,24 @@ $(document).ready(function () {
 
 
 // Draw the sky with radial gradient from the center of the canvas
-function drawSky(canvas) {
+// Options: 
+//  startX, startY, startRadius, endX, endY, endRadius
+function drawSky(canvas, options) {
     var context = canvas.getContext("2d");
 
     var centerX = canvas.width / 2;
     var centerY = canvas.height / 2;
+
+    // 
+    options = options || {};
+    if (options.startX == null) { options.startX = centerX; }
+    if (options.startY == null) { options.startY = centerY; }
+    if (options.startRadius == null) { options.startRadius = 0; }
+    if (options.startColor == null) { options.startColor = "#8ED6FF"; }  // light blue
+    if (options.endX == null) { options.endX = centerX; }
+    if (options.endY == null) { options.endY = centerY; }
+    if (options.endRadius == null) { options.endRadius = Math.max(canvas.width, canvas.height);; }
+    if (options.endColor == null) { options.endColor = "#004CB3"; }  // dark blue
 
     // Rectangle for gradient
     context.beginPath();
@@ -53,9 +69,11 @@ function drawSky(canvas) {
 
     // Gradient
     var outerRadius =  Math.min(canvas.width, canvas.height);
-    var grd = context.createRadialGradient(centerX, centerY, 0, centerX, centerY, outerRadius);
-    grd.addColorStop(0, "#8ED6FF"); // light blue
-    grd.addColorStop(1, "#004CB3"); // dark blue
+    var grd = context.createRadialGradient(
+            options.startX, options.startY, options.startRadius, 
+            options.endX, options.endY, options.endRadius);
+    grd.addColorStop(0, options.startColor);
+    grd.addColorStop(1, options.endColor); 
     context.fillStyle = grd;
     context.fill();
 }
@@ -67,6 +85,7 @@ function drawStar(canvas, options) {
     var centerX = canvas.width / 2;
     var centerY = canvas.height / 2;
 
+    options = options || {};
     if (options.x==null) {
         options.x = centerX;
     }
