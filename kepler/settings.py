@@ -8,13 +8,13 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Admins', 'kepler@incuna.com'),
+    ('Admins', 'max@incuna.com'),
 )
 
 MANAGERS = ADMINS
 
 EMAIL_SUBJECT_PREFIX = "[Kepler] "
-SERVER_EMAIL = DEFAULT_FROM_EMAIL = "kepler@incuna.com"
+SERVER_EMAIL = DEFAULT_FROM_EMAIL = "max@incuna.com"
 
 DATABASES = {
     'default': {
@@ -94,7 +94,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-    'compressor.finders.CompressorFinder',
+    #'compressor.finders.CompressorFinder',
 )
 
 ## Registration settings
@@ -229,10 +229,10 @@ LOGGING = {
     }
 }
 
-COMPRESS_CSS_FILTERS = [
-    'compressor.filters.css_default.CssAbsoluteFilter',
-    'compressor.filters.cssmin.CSSMinFilter',
-]
+#COMPRESS_CSS_FILTERS = [
+#    'compressor.filters.css_default.CssAbsoluteFilter',
+#    'compressor.filters.cssmin.CSSMinFilter',
+#]
 
 try:
     from local_settings import *
