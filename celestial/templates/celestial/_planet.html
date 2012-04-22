@@ -1,41 +1,19 @@
 {% load humanize %}
 
-<canvas id="planetCanvas" width="578" height="200"></canvas>
+<script>
+    $(document).ready(function () {
+        $('.planet').each(function () {
+            var planet = $(this);
+            // canvas
+            var canvas = planet.find('canvas.planetCanvas').get(0);
+            var size_in_sky = $(this).data('size'); // radius of sky
+            var radius = size_in_sky/90*canvas.width;
+            drawSky(canvas);
+            drawStar(canvas, {radius: radius, color:'{{ planet.colour_of_star }}'});
 
-<dl>
-    {% if planet.time_to_go_circumnavigate_by_airbus_a380 %}
-    <dt>Time to circumnavigate by aeroplane</dt>
-    <dd>{{ planet.time_to_go_circumnavigate_by_airbus_a380|stringformat:"d" }} hrs</dd>
-    {% endif %}
-    {% if planet.time_to_boil_tea %}
-    <dt>Time to boil tea</dt>
-    <dd>{{ planet.time_to_boil_tea }}</dd>
-    {% endif %}
-    {% if planet.time_to_freeze_lolly %}
-    <dt>Time to freeze lolly</dt>
-    <dd>{{ planet.time_to_freeze_lolly }}</dd>
-    {% endif %}
-    {% if planet.age_in_planet_years %}
-    <dt>Age in planet years</dt>
-    <dd>{{ planet.age_in_planet_years }}</dd>
-    {% endif %}
-    {% if planet.time_to_planet_by_spacecraft %}
-    <dt>Time to planet by spacecraft</dt>
-    <dd>{{ planet.time_to_planet_by_spacecraft|intcomma }} years</dd>
-    {% endif %}
-    {% if planet.time_to_planet_by_car %}
-    <dt>Time to planet by car</dt>
-    <dd>{{ planet.time_to_planet_by_car|intcomma }} years</dd>
-    {% endif %}
-</dl>
-
-<div>
-    I'm <span data-var="age_on_earth" data-min="1" data-max="100" class="TKAdjustableNumber"> years old on Earth</span>, but I'd be
-    <span data-var='age_on_planet' data-format="%d"> years old on {{planet.name}}</span>.
-    <script>
-        var period = {{planet.orbital_period}};
-        $(function() {
-            var tangle = new Tangle(document, {
+            // Age
+            var period = $(this).data('period'); 
+            var period_tangle = new Tangle(document, {
                 initialize: function () { 
                     this.age_on_earth = 15; 
                 },
@@ -43,27 +21,61 @@
                     this.age_on_planet = this.age_on_earth * (365.256363 / period); 
                 }
             });
-        });
-    </script>
-</div>
 
-{% if planet.gravity %}
-    <div>
-        I weigh <span data-var="weight_on_earth"  data-min="10" data-max="100" class="TKAdjustableNumber"> kg on Earth</span>, but I'd weigh
-        <span data-var='weight_on_planet' data-format="%d"> kg on {{planet.name}}</span>.
-        <script>
-            var gravity = {{planet.gravity}};
-            $(function() {
-                var tangle = new Tangle(document, {
-                    initialize: function () { 
-                        this.weight_on_earth = 50; 
-                    },
-                    update:     function () {
-                        this.weight_on_planet = (this.weight_on_earth / 9.81) * gravity; 
-                    }
-                });
+            // Gravity
+            var gravity = $(this).data('gravity');
+            var gravity_tangle = new Tangle(document, {
+                initialize: function () { 
+                    this.weight_on_earth = 50; 
+                },
+                update:     function () {
+                    this.weight_on_planet = (this.weight_on_earth / 9.81) * gravity; 
+                }
             });
-        </script>
-    </div>
-{% endif %}
+            
 
+        });
+    });
+</script>
+<div class="planet" data-size="{{ planet.size_of_star_in_sky }}" data-period="{{planet.orbital_period}}" data-gravity="{{planet.gravity}}" >
+    <canvas class="planetCanvas" width="578" height="200"></canvas>
+
+    <dl>
+        {% if planet.time_to_go_circumnavigate_by_airbus_a380 %}
+        <dt>Time to circumnavigate by aeroplane</dt>
+        <dd>{{ planet.time_to_go_circumnavigate_by_airbus_a380|stringformat:"d" }} hrs</dd>
+        {% endif %}
+        {% if planet.time_to_boil_tea %}
+        <dt>Time to boil tea</dt>
+        <dd>{{ planet.time_to_boil_tea }}</dd>
+        {% endif %}
+        {% if planet.time_to_freeze_lolly %}
+        <dt>Time to freeze lolly</dt>
+        <dd>{{ planet.time_to_freeze_lolly }}</dd>
+        {% endif %}
+        {% if planet.age_in_planet_years %}
+        <dt>Age in planet years</dt>
+        <dd>{{ planet.age_in_planet_years }}</dd>
+        {% endif %}
+        {% if planet.time_to_planet_by_spacecraft %}
+        <dt>Time to planet by spacecraft</dt>
+        <dd>{{ planet.time_to_planet_by_spacecraft|intcomma }} years</dd>
+        {% endif %}
+        {% if planet.time_to_planet_by_car %}
+        <dt>Time to planet by car</dt>
+        <dd>{{ planet.time_to_planet_by_car|intcomma }} years</dd>
+        {% endif %}
+    </dl>
+
+    <div>
+        I'm <span data-var="age_on_earth" data-min="1" data-max="100" class="TKAdjustableNumber"> years old on Earth</span>, but I'd be
+        <span data-var='age_on_planet' data-format="%d"> years old on {{planet.name}}</span>.
+    </div>
+
+    {% if planet.gravity %}
+        <div>
+            I weigh <span data-var="weight_on_earth"  data-min="10" data-max="100" class="TKAdjustableNumber"> kg on Earth</span>, but I'd weigh
+            <span data-var='weight_on_planet' data-format="%d"> kg on {{planet.name}}</span>.
+        </div>
+    {% endif %}
+</div>

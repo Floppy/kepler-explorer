@@ -4,11 +4,12 @@
 
 {% block content %}
 {% if object.planets.count %}
-<ul>
+<div class="planets">
     {% for planet in planets %}
-    <li><a href="{{ planet.get_absolute_url }}">{{ planet }}</a></li>
+    <a href="{{ planet.get_absolute_url }}">{{ planet }}</a></li>
+    {% include 'celestial/_planet.html' %}
     {% endfor %}
-</ul>
+</div>
 {% else %}
 <p>No known planets!</p>
 {% endif %}

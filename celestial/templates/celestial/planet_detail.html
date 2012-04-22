@@ -3,16 +3,6 @@
 {% load humanize %}
 
 {% block extra_script %}
-<script>
-    $(document).ready(function () {
-        var canvas = $("#planetCanvas").get(0);
-        var size_in_sky = {{ planet.size_of_star_in_sky }}; // radius of sky
-        var radius = size_in_sky/90*canvas.width;
-        drawSky(canvas);
-        drawStar(canvas, {radius: radius, color:'{{ planet.colour_of_star }}'});
-        
-    });
-</script>
 {% endblock extra_script %}
   
 {% block page_title %}<h2>Planet: {{ object }}</h2>{% endblock %}
