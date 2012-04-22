@@ -62,10 +62,6 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
-print AWS_ACCESS_KEY_ID
-print AWS_SECRET_ACCESS_KEY
-print AWS_STORAGE_BUCKET_NAME
-
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
 MEDIA_ROOT = os.path.join(DIRNAME, "client_media")
@@ -87,8 +83,6 @@ if AWS_STORAGE_BUCKET_NAME:
     STATIC_URL = 'http://{0}.s3.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
 else:
     STATIC_URL = '/static/'
-
-print STATIC_URL
 
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
