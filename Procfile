@@ -1,1 +1,1 @@
-web: gunicorn prototype.wsgi -b 0.0.0.0:$PORT -w 3
+web: gunicorn kepler.wsgi -b 0.0.0.0:$PORT -w 3
