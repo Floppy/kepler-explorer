@@ -21,17 +21,22 @@ a.star:hover circle
 	stroke-width: 3px
 
 .infobox
-	width: 35%
-	float: left
+	width: 30%
 	text-align: center
 	margin-top: 20px
 	margin-bottom: 20px
-	margin-left: 50px
-	margin-right: 50px
+	margin-left: 25px
+	margin-right: 25px
 	background-color: #555
 	padding: 20px
 	border-radius: 20px 20px
 	
+.infobox:nth-child(odd)
+	float: right
+	
+.infobox:nth-child(even)
+	float: left
+
 .TKAdjustableNumber
 	color: yellow
 	font-size: 150%

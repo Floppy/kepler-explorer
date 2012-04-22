@@ -764,30 +764,39 @@ a.star:hover circle {
 
 /* line 23, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
 .infobox {
-  width: 35%;
-  float: left;
+  width: 30%;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 25px;
+  margin-right: 25px;
   background-color: #555555;
   padding: 20px;
   border-radius: 20px 20px;
 }
 
-/* line 35, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 34, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+.infobox:nth-child(odd) {
+  float: right;
+}
+
+/* line 37, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+.infobox:nth-child(even) {
+  float: left;
+}
+
+/* line 40, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
 .TKAdjustableNumber {
   color: yellow;
   font-size: 150%;
 }
 
-/* line 39, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 44, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
 .factoid {
   font-size: 200%;
 }
 
-/* line 42, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 47, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
 .mini-factoid {
   font-size: 175%;
 }

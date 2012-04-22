@@ -2,8 +2,12 @@
 
 <div class="planet" data-size="{{ planet.size_of_star_in_sky }}" data-color="{{ planet.colour_of_star }}" data-period="{{planet.orbital_period}}" data-gravity="{{planet.gravity}}" >
 
-    <canvas class="planetCanvas" width="578" height="200"></canvas>
+	<div style='text-align: center'>
+		<canvas class="planetCanvas" width="1200" height="750"></canvas>
+	</div>
 
+	<div id='infoboxes' style='position: relative; top: -700px;'>
+		
     {% if planet.time_to_go_circumnavigate_by_airbus_a380 %}
 		<div class='infobox'>
 			It would take
@@ -44,6 +48,14 @@
 		</div>
     {% endif %}
 
+    {% if planet.gravity %}
+		<div class='infobox'>
+			When standing on {{planet.name}}, I could jump
+		    <span class='factoid' data-var='vertical_jump' data-format="%d"> cm</span>
+			into the air.
+		</div>
+    {% endif %}
+
 	<div class='infobox'>
 		I'm <span data-var="age_on_earth" data-min="1" data-max="100" class="TKAdjustableNumber"> years old on Earth</span>, but I'd be
 		<span class='factoid' data-var='age_on_planet' data-format="%d"> years old</span> on {{planet.name}}.
@@ -55,10 +67,8 @@
             <span class='factoid' data-var='weight_on_planet' data-format="%d"> kg</span> on {{planet.name}}, which is the same as
             <span class='mini-factoid' data-var='equiv_weight' data-format="%s"></span> on Earth.
         </div>
-		<div class='infobox'>
-			When standing on {{planet.name}}, I could jump
-		    <span class='factoid' data-var='vertical_jump' data-format="%d"> cm</span>
-			into the air.
-		</div>
     {% endif %}
+
+	</div>
+	
 </div>
