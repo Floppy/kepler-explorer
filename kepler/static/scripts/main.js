@@ -1,3 +1,42 @@
+$(document).ready(function () {
+    console.log('ready');
+    $('.planet').each(function () {
+        var planet = $(this);
+        // canvas
+        var canvas = planet.find('canvas.planetCanvas').get(0),
+            size_in_sky = $(this).data('size'), // radius of sky
+            color = $(this).data('color'),
+            radius = size_in_sky/90*canvas.width;
+        drawSky(canvas);
+        drawStar(canvas, {radius: radius, color: color});
+
+        // Age
+        var period = $(this).data('period'),
+            period_tangle = new Tangle(planet.get(0), {
+            initialize: function () { 
+                            this.age_on_earth = 15; 
+                        },
+            update:     function () {
+                            this.age_on_planet = this.age_on_earth * (365.256363 / period); 
+                        }
+        });
+
+        // Gravity
+        var gravity = $(this).data('gravity'),
+            gravity_tangle = new Tangle(planet.get(0), {
+            initialize: function () { 
+                            this.weight_on_earth = 50; 
+                        },
+            update:     function () {
+                            this.weight_on_planet = (this.weight_on_earth / 9.81) * gravity; 
+                        }
+        });
+
+
+    });
+});
+
+
 // Draw the sky with radial gradient from the center of the canvas
 function drawSky(canvas) {
     var context = canvas.getContext("2d");
@@ -44,4 +83,3 @@ function drawStar(canvas, options) {
 
     return arc;
 }
-

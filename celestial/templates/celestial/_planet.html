@@ -1,43 +1,6 @@
 {% load humanize %}
 
-<script>
-    $(document).ready(function () {
-        $('.planet').each(function () {
-            var planet = $(this);
-            // canvas
-            var canvas = planet.find('canvas.planetCanvas').get(0);
-            var size_in_sky = $(this).data('size'); // radius of sky
-            var radius = size_in_sky/90*canvas.width;
-            drawSky(canvas);
-            drawStar(canvas, {radius: radius, color:'{{ planet.colour_of_star }}'});
-
-            // Age
-            var period = $(this).data('period'); 
-            var period_tangle = new Tangle(document, {
-                initialize: function () { 
-                    this.age_on_earth = 15; 
-                },
-                update:     function () {
-                    this.age_on_planet = this.age_on_earth * (365.256363 / period); 
-                }
-            });
-
-            // Gravity
-            var gravity = $(this).data('gravity');
-            var gravity_tangle = new Tangle(document, {
-                initialize: function () { 
-                    this.weight_on_earth = 50; 
-                },
-                update:     function () {
-                    this.weight_on_planet = (this.weight_on_earth / 9.81) * gravity; 
-                }
-            });
-            
-
-        });
-    });
-</script>
-<div class="planet" data-size="{{ planet.size_of_star_in_sky }}" data-period="{{planet.orbital_period}}" data-gravity="{{planet.gravity}}" >
+<div class="planet" data-size="{{ planet.size_of_star_in_sky }}" data-color="{{ planet.colour_of_star }}" data-period="{{planet.orbital_period}}" data-gravity="{{planet.gravity}}" >
     <canvas class="planetCanvas" width="578" height="200"></canvas>
 
     <dl>
