@@ -7,8 +7,10 @@ $(document).ready(function () {
             size_in_sky = $(this).data('size'), // radius of sky
             color = $(this).data('color'),
             radius = size_in_sky/90*canvas.width;
+			size_of_sol = 1/90*canvas.width;
         drawSky(canvas);
         drawStar(canvas, {radius: radius, color: color});
+        drawOutline(canvas, {radius: size_of_sol});
 
         // Age
         var period = $(this).data('period'),
@@ -80,6 +82,34 @@ function drawStar(canvas, options) {
     context.fill();
     context.lineWidth = 1;
     context.strokeStyle = options.color
+    context.stroke();
+
+    return arc;
+}
+
+// Draw a circle with the given radius (outline only).
+// drawOutline(canvas, {radius: 70, color:'#FFFFFF'});
+function drawOutline(canvas, options) {
+    var context = canvas.getContext("2d");
+
+    var centerX = canvas.width / 2;
+    var centerY = canvas.height / 2;
+
+    if (options.x==null) {
+        options.x = centerX;
+    }
+
+    if (options.y == null) {
+        options.y = centerY;
+    }
+
+    // circle
+    context.beginPath();
+    var arc  = context.arc(options.x, options.y, options.radius, 0, 2 * Math.PI, false);
+    context.fillStyle = "None";
+    context.fill();
+    context.lineWidth = 1;
+    context.strokeStyle = "#000000"
     context.stroke();
 
     return arc;
