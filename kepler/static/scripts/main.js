@@ -39,18 +39,18 @@ $(document).ready(function () {
             update:     function () {
                             this.vertical_jump = 35 * (9.81/gravity);
                             this.weight_on_planet = (this.weight_on_earth / 9.81) * gravity;
-                            // A cow weighs 360kg, an 8oz steak weighs 0.22 kg
+                            // A cow weighs 360kg, a chicken weighs 1.5 kg
                             this.weight_in_cows = (this.weight_on_planet / 360);
-                            this.extra_weight_in_steaks = (this.weight_on_planet % 360)/0.22
+                            this.extra_weight_in_chickens = (this.weight_on_planet % 360)/1.5
                             this.weight_in_babies = this.weight_on_planet / 3.3
                             if(this.weight_in_cows > 1){
                                 this.equiv_weight = Math.floor(this.weight_in_cows) + " cow"
                                 if(this.weight_in_cows > 2){
                                     this.equiv_weight = this.equiv_weight + "s"
                                 }
-                                if(Math.floor(this.extra_weight_in_steaks) > 0){
+                                if(Math.floor(this.extra_weight_in_chickens) > 0){
                                     this.equiv_weight = this.equiv_weight + " and " +
-                                        Math.floor(this.extra_weight_in_steaks) + " 8oz steaks"
+                                        Math.floor(this.extra_weight_in_chickens) + " chickens"
                                 }
 
                             } else {
