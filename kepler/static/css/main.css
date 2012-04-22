@@ -731,6 +731,17 @@ legend + .control-group {
 }
 
 /* line 1, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+body {
+  background: black;
+  color: white;
+}
+
+/* line 5, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+a {
+  color: white;
+}
+
+/* line 8, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
 .starfield {
   position: relative;
   height: 100%;
@@ -739,21 +750,46 @@ legend + .control-group {
   margin: 0px auto;
 }
 
-/* line 8, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 15, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
 a.star circle {
   stroke: black;
   stroke-width: 1px;
 }
 
-/* line 12, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 19, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
 a.star:hover circle {
   stroke: red;
   stroke-width: 3px;
 }
 
-/* line 16, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 23, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+.infobox {
+  width: 35%;
+  float: left;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: #555555;
+  padding: 20px;
+  border-radius: 20px 20px;
+}
+
+/* line 35, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+.TKAdjustableNumber {
+  color: yellow;
+  font-size: 150%;
+}
+
+/* line 39, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
 .factoid {
   font-size: 200%;
+}
+
+/* line 42, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+.mini-factoid {
+  font-size: 175%;
 }
 
 @media print {
