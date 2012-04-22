@@ -156,7 +156,7 @@ class Planet(models.Model):
 
         planet_distance - the distance to the planet in parsecs
 
-        returns the time in seconds taken to get to the planet
+        returns the time in years taken to get to the planet
         """
         speed_of_craft = Decimal(17255.56)
         return self.time_to_planet_at_speed(speed_of_craft)
@@ -170,7 +170,7 @@ class Planet(models.Model):
 
         planet_distance - the distance to the planet in parsecs
 
-        returns the time in seconds taken to get to the planet
+        returns the time in years taken to get to the planet
         """
         speed_of_craft = Decimal(31.2928)
         return self.time_to_planet_at_speed(speed_of_craft)
