@@ -6,3 +6,7 @@ bin/
 db.sqlite
 include/
 lib/
+
+.Python
+kepler/.sass-cache/
+exoplanets.csv
