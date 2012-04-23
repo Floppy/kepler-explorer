@@ -56,17 +56,19 @@
 		</div>
     {% endif %}
 
-	<div class='infobox'>
-		I'm <span data-var="age_on_earth" data-min="1" data-max="100" class="TKAdjustableNumber"> years old on Earth</span>, but I'd be
-		<span class='factoid' data-var='age_on_planet' data-format="%d"> years old</span> on {{planet.name}}.
-	</div>
+    {% if planet.name != 'Earth' %}
+		<div class='infobox'>
+			I'm <span data-var="age_on_earth" data-min="1" data-max="100" class="TKAdjustableNumber"> years old on Earth</span>, but I'd be
+			<span class='factoid' data-var='age_on_planet' data-format="%d"> years old</span> on {{planet.name}}.
+		</div>
 
-    {% if planet.gravity %}
-	    <div class='infobox'>
-            I weigh <span data-var="weight_on_earth"  data-min="10" data-max="100" class="TKAdjustableNumber"> kg on Earth</span>, but I'd weigh
-            <span class='factoid' data-var='weight_on_planet' data-format="%d"> kg</span> on {{planet.name}}, which is the same as
-            <span class='mini-factoid' data-var='equiv_weight' data-format="%s"></span> on Earth.
-        </div>
+	    {% if planet.gravity %}
+		    <div class='infobox'>
+	            I weigh <span data-var="weight_on_earth"  data-min="10" data-max="100" class="TKAdjustableNumber"> kg on Earth</span>, but I'd weigh
+	            <span class='factoid' data-var='weight_on_planet' data-format="%d"> kg</span> on {{planet.name}}, which is the same as
+	            <span class='mini-factoid' data-var='equiv_weight' data-format="%s"></span> on Earth.
+	        </div>
+	    {% endif %}
     {% endif %}
 
 	</div>
