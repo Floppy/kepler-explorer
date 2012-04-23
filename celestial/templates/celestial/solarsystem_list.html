@@ -5,7 +5,7 @@
 
 {% block content %}
 	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class='starfield'>
-	    {% for system in object_list %}
+  	    {% for system in object_list %}
 	        <a class='star' id='star{{system.id}}' xlink:href="{{ system.get_absolute_url }}" xlink:title='{{system}}' data-distance='{{system.distance}}' data-magnitude='{{system.magnitude}}' data-size='{{ system.radius}}'>
 	        	<circle cx="{% xpos system.right_ascension system.declination 100 %}%" cy="{% ypos system.right_ascension system.declination 100 %}%" r="{{system.radius|stellar_radius}}" fill="{{system.colour_of_star}}" onmouseover="$('#system-name-tip').text('{{system.name}}');" onmouseout="$('#system-name-tip').text('');"/>
   	        </a>
@@ -16,10 +16,6 @@
         Minimum brightness of star  <div class="slider" id="magnitude-slider" style='width: 250px;  position:absolute; left:200px;  display: inline-block'></div><br>
         Maximum size of star  <div class="slider" id="size-slider" style='width: 250px;  position:absolute; left:200px;  display: inline-block'></div>
 	</div>
-
-    <div id="background">
-        <img src="{{ STATIC_URL }}images/hemi.png" class="stretch" alt=""/>
-    </div>
 
 	<div id='system-name-tip' style="color: white; position:absolute; top:100px; left: 10px"></div>
 
