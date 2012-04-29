@@ -1,7 +1,23 @@
 from django.db import models
+from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext_lazy as _
 from math import pi, atan2
 from decimal import Decimal
+
+
+def generate_slug(cls, value):
+    count = 1
+    slug = slugify(value)
+
+    while cls.objects.filter(slug=slug).count():
+        slug = slugify(u'{0}-{1}'.format(value, count))
+        # make sure the slug is not too long
+        while len(slug) > cls._meta.get_field('slug').max_length:
+            value = value[:-1]
+            slug = slugify(u'{0}-{1}'.format(value, count))
+        count = count + 1
+    return slug
+
 
 class SolarSystem(models.Model):
     """
@@ -9,6 +25,7 @@ class SolarSystem(models.Model):
     """
     name = models.CharField(max_length=64, unique=True,
             help_text=_('Name for primary star'))
+    slug = models.SlugField(unique=True)
     magnitude = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True,
             help_text=_('Magnitude'))
     radius = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True,
@@ -31,7 +48,13 @@ class SolarSystem(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('system-detail', [self.pk])
+        return ('system-detail', [self.slug])
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = generate_slug(SolarSystem, self.name)
+
+        return super(SolarSystem, self).save(*args, **kwargs)
 
     @property
     def colour_of_star(self):
@@ -65,6 +88,7 @@ class SolarSystem(models.Model):
 class Planet(models.Model):
     """A planet is a celestial body orbiting a star"""
     name = models.CharField(max_length=255, unique=True)
+    slug = models.SlugField(unique=True)
     solar_system = models.ForeignKey('celestial.SolarSystem', related_name='planets')
     radius = models.DecimalField(max_digits=15, decimal_places=10, null=True, blank=True,
             help_text=_('Planetary radius in Jupiter radii (71492 km) Product of r/R* and the stellar radius'))
@@ -88,7 +112,13 @@ class Planet(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('planet-detail', [self.pk])
+        return ('planet-detail', [self.slug])
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = generate_slug(Planet, self.name)
+
+        return super(Planet, self).save(*args, **kwargs)
 
     @property
     def radius_km(self):
