@@ -1,16 +1,16 @@
-/* line 15, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 15, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 audio, canvas, video {
   display: inline-block;
   *display: inline;
   *zoom: 1;
 }
 
-/* line 20, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 20, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 audio:not([controls]), [hidden] {
   display: none;
 }
 
-/* line 31, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 31, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
@@ -19,7 +19,7 @@ html {
   height: 100%;
 }
 
-/* line 38, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 38, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -28,27 +28,27 @@ body {
   height: 100%;
 }
 
-/* line 50, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 50, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
-/* line 53, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 53, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 b, strong {
   font-weight: bold;
 }
 
-/* line 56, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 56, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 blockquote {
   margin: 1em 40px;
 }
 
-/* line 59, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 59, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 dfn {
   font-style: italic;
 }
 
-/* line 62, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 62, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 hr {
   display: block;
   height: 1px;
@@ -58,14 +58,14 @@ hr {
   padding: 0;
 }
 
-/* line 70, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 70, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 ins {
   background: #ffff99;
   color: black;
   text-decoration: none;
 }
 
-/* line 75, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 75, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 mark {
   background: yellow;
   color: black;
@@ -73,40 +73,40 @@ mark {
   font-weight: bold;
 }
 
-/* line 81, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 81, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 p {
   margin: 0 0 1.5em 0;
 }
 
-/* line 86, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 86, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 pre, code, kbd, samp {
   font-family: Menlo, Monaco, "Courier New", monospace;
   font-size: 1em;
 }
 
-/* line 92, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 92, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 pre {
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
 
-/* line 97, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 97, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 q {
   quotes: none;
 }
-/* line 99, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 99, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 q:before, q:after {
   content: "";
   content: none;
 }
 
-/* line 103, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 103, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 small {
   font-size: 85%;
 }
 
-/* line 108, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 108, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 sub {
   font-size: 75%;
   line-height: 0;
@@ -114,7 +114,7 @@ sub {
   vertical-align: baseline;
 }
 
-/* line 114, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 114, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 sup {
   font-size: 75%;
   line-height: 0;
@@ -123,23 +123,23 @@ sup {
   top: -0.5em;
 }
 
-/* line 121, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 121, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 sub {
   bottom: -0.25em;
 }
 
-/* line 128, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 128, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 ul, ol {
   margin: 1em 0;
   padding: 0 0 0 40px;
 }
 
-/* line 132, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 132, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 dd {
   margin: 0 0 0 40px;
 }
 
-/* line 134, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 134, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 nav ul, nav ol {
   list-style: none;
   list-style-image: none;
@@ -147,24 +147,24 @@ nav ul, nav ol {
   padding: 0;
 }
 
-/* line 147, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 147, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 img {
   border: 0;
   -ms-interpolation-mode: bicubic;
   vertical-align: middle;
 }
 
-/* line 154, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 154, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 svg:not(:root) {
   overflow: hidden;
 }
 
-/* line 163, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 163, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 label {
   cursor: pointer;
 }
 
-/* line 169, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 169, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 legend {
   border: 0;
   *margin-left: -7px;
@@ -172,7 +172,7 @@ legend {
   white-space: normal;
 }
 
-/* line 179, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 179, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 button, input, select, textarea {
   font-size: 100%;
   margin: 0;
@@ -180,80 +180,80 @@ button, input, select, textarea {
   *vertical-align: middle;
 }
 
-/* line 187, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 187, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 button, input {
   line-height: normal;
 }
 
-/* line 194, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 194, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 button {
   cursor: pointer;
   -webkit-appearance: button;
   *overflow: visible;
 }
 
-/* line 200, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 200, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 input[type="button"], input[type="reset"], input[type="submit"] {
   cursor: pointer;
   -webkit-appearance: button;
   *overflow: visible;
 }
-/* line 204, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 204, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 input[type="checkbox"], input[type="radio"] {
   box-sizing: border-box;
   padding: 0;
   *width: 13px;
   *height: 13px;
 }
-/* line 209, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 209, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
-/* line 214, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 214, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
 
-/* line 219, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 219, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-/* line 226, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 226, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 textarea {
   overflow: auto;
   vertical-align: top;
   resize: vertical;
 }
 
-/* line 235, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 235, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 239, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_reset.sass */
+/* line 239, /Users/max/kepler-explorer/kepler/sass/plugins/_reset.sass */
 td {
   vertical-align: top;
 }
 
-/* line 15, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 15, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 form {
   margin: 0 0 18px;
 }
 
-/* line 18, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 18, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 fieldset {
   padding: 0;
   margin: 0;
   border: 0;
 }
 
-/* line 24, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 24, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 legend {
   display: block;
   width: 100%;
@@ -263,19 +263,19 @@ legend {
   border: 0;
   border-bottom: 1px solid #eeeeee;
 }
-/* line 33, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 33, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 legend small {
   font-size: 13.5px;
   color: #999999;
 }
 
-/* line 38, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 38, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 label {
   display: block;
   margin-bottom: 5px;
 }
 
-/* line 43, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 43, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 input,
 textarea,
 select,
@@ -294,7 +294,7 @@ select,
   border: 1px solid #555555;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-/* line 7, /Users/james/.rvm/gems/ruby-1.9.2-p318/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+/* line 7, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 input,
 textarea,
 select,
@@ -302,20 +302,20 @@ select,
   *display: inline;
 }
 
-/* line 58, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 58, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .uneditable-textarea {
   width: auto;
   height: auto;
 }
 
-/* line 63, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 63, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 label input,
 label textarea,
 label select {
   display: block;
 }
 
-/* line 69, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 69, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 input[type="image"],
 input[type="checkbox"],
 input[type="radio"] {
@@ -329,12 +329,12 @@ input[type="radio"] {
   border: 0 \9 ;
 }
 
-/* line 81, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 81, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 input[type="image"] {
   border: 0;
 }
 
-/* line 85, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 85, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 input[type="file"] {
   width: auto;
   padding: initial;
@@ -343,7 +343,7 @@ input[type="file"] {
   background-color: initial;
 }
 
-/* line 93, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 93, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -351,7 +351,7 @@ input[type="submit"] {
   height: auto;
 }
 
-/* line 100, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 100, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 select,
 input[type="file"] {
   height: 28px;
@@ -359,53 +359,53 @@ input[type="file"] {
   line-height: 28px;
 }
 
-/* line 107, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 107, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 input[type="file"] {
   line-height: 18px \9;
 }
 
-/* line 112, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 112, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 select {
   width: 220px;
   background-color: white;
 }
 
-/* line 117, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 117, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 select[multiple],
 select[size] {
   height: auto;
 }
 
-/* line 122, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 122, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 textarea {
   height: auto;
 }
 
-/* line 127, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 127, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 input[type="hidden"] {
   display: none;
 }
 
-/* line 134, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 134, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .radio,
 .checkbox {
   padding-left: 18px;
 }
 
-/* line 138, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 138, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .radio input[type="radio"],
 .checkbox input[type="checkbox"] {
   float: left;
   margin-left: -18px;
 }
 
-/* line 145, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 145, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .controls > .radio:first-child,
 .controls > .checkbox:first-child {
   padding-top: 5px;
 }
 
-/* line 152, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 152, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .radio.inline,
 .checkbox.inline {
   padding-top: 5px;
@@ -416,19 +416,19 @@ input[type="hidden"] {
   vertical-align: middle;
   *vertical-align: auto;
 }
-/* line 7, /Users/james/.rvm/gems/ruby-1.9.2-p318/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+/* line 7, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 .radio.inline,
 .checkbox.inline {
   *display: inline;
 }
 
-/* line 158, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 158, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .radio.inline + .radio.inline,
 .checkbox.inline + .checkbox.inline {
   margin-left: 10px;
 }
 
-/* line 164, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 164, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 input[class*="span"],
 select[class*="span"],
 textarea[class*="span"],
@@ -437,7 +437,7 @@ textarea[class*="span"],
   margin-left: 0;
 }
 
-/* line 176, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 176, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 input[disabled],
 select[disabled],
 textarea[disabled],
@@ -449,65 +449,65 @@ textarea[readonly] {
   cursor: not-allowed;
 }
 
-/* line 193, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 193, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .control-group.warning > label,
 .control-group.warning .help-block,
 .control-group.warning .help-inline {
   color: #c09853;
 }
-/* line 197, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 197, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .control-group.warning input,
 .control-group.warning select,
 .control-group.warning textarea {
   color: #c09853;
   border-color: #c09853;
 }
-/* line 202, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 202, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .control-group.warning .input-prepend .add-on,
 .control-group.warning .input-append .add-on {
   color: #c09853;
   border-color: #c09853;
 }
-/* line 208, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 208, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .control-group.error > label,
 .control-group.error .help-block,
 .control-group.error .help-inline {
   color: #b94a48;
 }
-/* line 212, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 212, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .control-group.error input,
 .control-group.error select,
 .control-group.error textarea {
   color: #b94a48;
   border-color: #b94a48;
 }
-/* line 217, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 217, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .control-group.error .input-prepend .add-on,
 .control-group.error .input-append .add-on {
   color: #b94a48;
   border-color: #b94a48;
 }
-/* line 223, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 223, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .control-group.success > label,
 .control-group.success .help-block,
 .control-group.success .help-inline {
   color: #468847;
 }
-/* line 228, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 228, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .control-group.success input,
 .control-group.success select,
 .control-group.success textarea {
   color: #468847;
   border-color: #468847;
 }
-/* line 234, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 234, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .control-group.success .input-prepend .add-on,
 .control-group.success .input-append .add-on {
   color: #468847;
   border-color: #468847;
 }
 
-/* line 241, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 241, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 input:focus:required:invalid,
 textarea:focus:required:invalid,
 select:focus:required:invalid {
@@ -515,7 +515,7 @@ select:focus:required:invalid {
   border-color: #ee5f5b;
 }
 
-/* line 251, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 251, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .form-actions {
   padding: 17px 20px 18px;
   margin-top: 18px;
@@ -524,17 +524,17 @@ select:focus:required:invalid {
   border-top: 1px solid #dddddd;
   zoom: 1;
 }
-/* line 3, /Users/james/Source/kepler-explorer/kepler/sass/globals/_mixins.sass */
+/* line 3, /Users/max/kepler-explorer/kepler/sass/globals/_mixins.sass */
 .form-actions:before, .form-actions:after {
   content: "";
   display: table;
 }
-/* line 6, /Users/james/Source/kepler-explorer/kepler/sass/globals/_mixins.sass */
+/* line 6, /Users/max/kepler-explorer/kepler/sass/globals/_mixins.sass */
 .form-actions:after {
   clear: both;
 }
 
-/* line 261, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 261, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .uneditable-input {
   display: block;
   background-color: white;
@@ -542,29 +542,29 @@ select:focus:required:invalid {
   cursor: not-allowed;
 }
 
-/* line 269, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 269, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 :-moz-placeholder {
   color: #999999;
 }
 
-/* line 272, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 272, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 ::-webkit-input-placeholder {
   color: #999999;
 }
 
-/* line 279, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 279, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .help-block,
 .help-inline {
   color: #555555;
 }
 
-/* line 284, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 284, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .help-block {
   display: block;
   margin-bottom: 9px;
 }
 
-/* line 289, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 289, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .help-inline {
   padding-left: 5px;
   display: -moz-inline-box;
@@ -573,12 +573,12 @@ select:focus:required:invalid {
   vertical-align: middle;
   *vertical-align: auto;
 }
-/* line 7, /Users/james/.rvm/gems/ruby-1.9.2-p318/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+/* line 7, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 .help-inline {
   *display: inline;
 }
 
-/* line 303, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 303, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .form-search input,
 .form-search textarea,
 .form-search select,
@@ -607,7 +607,7 @@ select:focus:required:invalid {
   *vertical-align: auto;
   margin-bottom: 0;
 }
-/* line 7, /Users/james/.rvm/gems/ruby-1.9.2-p318/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+/* line 7, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 .form-search input,
 .form-search textarea,
 .form-search select,
@@ -631,14 +631,14 @@ select:focus:required:invalid {
 .form-horizontal .input-append {
   *display: inline;
 }
-/* line 314, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 314, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .form-search .hide,
 .form-inline .hide,
 .form-horizontal .hide {
   display: none;
 }
 
-/* line 317, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 317, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .form-search label,
 .form-inline label {
   display: -moz-inline-box;
@@ -647,13 +647,13 @@ select:focus:required:invalid {
   vertical-align: middle;
   *vertical-align: auto;
 }
-/* line 7, /Users/james/.rvm/gems/ruby-1.9.2-p318/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+/* line 7, /Library/Ruby/Gems/1.8/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 .form-search label,
 .form-inline label {
   *display: inline;
 }
 
-/* line 322, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 322, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .form-search .input-append,
 .form-inline .input-append,
 .form-search .input-prepend,
@@ -661,7 +661,7 @@ select:focus:required:invalid {
   margin-bottom: 0;
 }
 
-/* line 329, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 329, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .form-search .radio,
 .form-search .checkbox,
 .form-inline .radio,
@@ -671,7 +671,7 @@ select:focus:required:invalid {
   vertical-align: middle;
 }
 
-/* line 338, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 338, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .form-search .radio input[type="radio"],
 .form-search .checkbox input[type="checkbox"],
 .form-inline .radio input[type="radio"],
@@ -681,108 +681,108 @@ select:focus:required:invalid {
   margin-right: 3px;
 }
 
-/* line 347, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 347, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .control-group {
   margin-bottom: 9px;
   zoom: 1;
 }
-/* line 3, /Users/james/Source/kepler-explorer/kepler/sass/globals/_mixins.sass */
+/* line 3, /Users/max/kepler-explorer/kepler/sass/globals/_mixins.sass */
 .control-group:before, .control-group:after {
   content: "";
   display: table;
 }
-/* line 6, /Users/james/Source/kepler-explorer/kepler/sass/globals/_mixins.sass */
+/* line 6, /Users/max/kepler-explorer/kepler/sass/globals/_mixins.sass */
 .control-group:after {
   clear: both;
 }
 
-/* line 352, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 352, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 legend + .control-group {
   margin-top: 18px;
   -webkit-margin-top-collapse: separate;
 }
 
-/* line 362, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 362, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .form-horizontal .control-group {
   margin-bottom: 18px;
 }
-/* line 366, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 366, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .form-horizontal .control-label {
   float: left;
   width: 140px;
   padding-top: 5px;
   text-align: right;
 }
-/* line 373, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 373, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .form-horizontal .controls {
   margin-left: 160px;
   *display: inline-block;
   *margin-left: 0;
   *padding-left: 20px;
 }
-/* line 381, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 381, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .form-horizontal .help-block {
   margin-top: 9px;
   margin-bottom: 0;
 }
-/* line 386, /Users/james/Source/kepler-explorer/kepler/sass/shared/_forms.sass */
+/* line 386, /Users/max/kepler-explorer/kepler/sass/shared/_forms.sass */
 .form-horizontal .form-actions {
   padding-left: 160px;
 }
 
-/* line 1, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 1, /Users/max/kepler-explorer/kepler/sass/sections/_systems.sass */
 body {
   background: black;
   color: white;
 }
 
-/* line 5, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 5, /Users/max/kepler-explorer/kepler/sass/sections/_systems.sass */
 a {
   color: white;
 }
 
-/* line 8, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 8, /Users/max/kepler-explorer/kepler/sass/sections/_systems.sass */
 div#wrap, div#site-main, div.structure {
   height: 100%;
 }
 
-/* line 11, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 11, /Users/max/kepler-explorer/kepler/sass/sections/_systems.sass */
 .starfield {
   position: relative;
   height: 100%;
   width: 100%;
   margin: 0px auto;
-  background: url(/static/images/hemi.png);
+  background: url(../images/hemi.png);
   background-size: 100% 100%;
 }
 
-/* line 19, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 19, /Users/max/kepler-explorer/kepler/sass/sections/_systems.sass */
 a.star circle {
   stroke: black;
   stroke-width: 1px;
 }
 
-/* line 23, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 23, /Users/max/kepler-explorer/kepler/sass/sections/_systems.sass */
 a.star:hover circle {
   stroke: red;
   stroke-width: 3px;
 }
 
-/* line 27, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 27, /Users/max/kepler-explorer/kepler/sass/sections/_systems.sass */
 .planet {
   position: relative;
   top: 0;
   left: 0;
   min-width: 750px;
 }
-/* line 33, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 33, /Users/max/kepler-explorer/kepler/sass/sections/_systems.sass */
 .planet #infoboxes {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-/* line 38, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 38, /Users/max/kepler-explorer/kepler/sass/sections/_systems.sass */
 .infobox {
   width: 30%;
   text-align: center;
@@ -795,36 +795,36 @@ a.star:hover circle {
   border-radius: 20px 20px;
 }
 
-/* line 49, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 49, /Users/max/kepler-explorer/kepler/sass/sections/_systems.sass */
 .infobox:nth-child(odd) {
   float: right;
   clear: right;
 }
 
-/* line 53, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 53, /Users/max/kepler-explorer/kepler/sass/sections/_systems.sass */
 .infobox:nth-child(even) {
   float: left;
   clear: left;
 }
 
-/* line 57, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 57, /Users/max/kepler-explorer/kepler/sass/sections/_systems.sass */
 .TKAdjustableNumber {
   color: yellow;
   font-size: 150%;
 }
 
-/* line 61, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 61, /Users/max/kepler-explorer/kepler/sass/sections/_systems.sass */
 .factoid {
   font-size: 200%;
 }
 
-/* line 64, /Users/james/Source/kepler-explorer/kepler/sass/sections/_systems.sass */
+/* line 64, /Users/max/kepler-explorer/kepler/sass/sections/_systems.sass */
 .mini-factoid {
   font-size: 175%;
 }
 
 @media print {
-  /* line 7, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_print.sass */
+  /* line 7, /Users/max/kepler-explorer/kepler/sass/plugins/_print.sass */
   * {
     background: transparent !important;
     color: black !important;
@@ -834,46 +834,46 @@ a.star:hover circle {
     -ms-filter: none !important;
   }
 
-  /* line 15, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_print.sass */
+  /* line 15, /Users/max/kepler-explorer/kepler/sass/plugins/_print.sass */
   a {
     text-decoration: underline;
   }
-  /* line 17, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_print.sass */
+  /* line 17, /Users/max/kepler-explorer/kepler/sass/plugins/_print.sass */
   a:visited {
     text-decoration: underline;
   }
-  /* line 19, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_print.sass */
+  /* line 19, /Users/max/kepler-explorer/kepler/sass/plugins/_print.sass */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 21, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_print.sass */
+  /* line 21, /Users/max/kepler-explorer/kepler/sass/plugins/_print.sass */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
 
-  /* line 24, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_print.sass */
+  /* line 24, /Users/max/kepler-explorer/kepler/sass/plugins/_print.sass */
   a[href^="javascript:"]:after, a[href^="#"]:after {
     content: "";
   }
 
-  /* line 27, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_print.sass */
+  /* line 27, /Users/max/kepler-explorer/kepler/sass/plugins/_print.sass */
   pre, blockquote {
     border: 1px solid #999999;
     page-break-inside: avoid;
   }
 
-  /* line 30, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_print.sass */
+  /* line 30, /Users/max/kepler-explorer/kepler/sass/plugins/_print.sass */
   thead {
     display: table-header-group;
   }
 
-  /* line 33, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_print.sass */
+  /* line 33, /Users/max/kepler-explorer/kepler/sass/plugins/_print.sass */
   tr {
     page-break-inside: avoid;
   }
 
-  /* line 35, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_print.sass */
+  /* line 35, /Users/max/kepler-explorer/kepler/sass/plugins/_print.sass */
   img {
     page-break-inside: avoid;
     max-width: 100% !important;
@@ -883,13 +883,13 @@ a.star:hover circle {
     margin: 0.5cm;
 }
 
-  /* line 41, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_print.sass */
+  /* line 41, /Users/max/kepler-explorer/kepler/sass/plugins/_print.sass */
   p, h2, h3 {
     orphans: 3;
     widows: 3;
   }
 
-  /* line 44, /Users/james/Source/kepler-explorer/kepler/sass/plugins/_print.sass */
+  /* line 44, /Users/max/kepler-explorer/kepler/sass/plugins/_print.sass */
   h2, h3 {
     page-break-after: avoid;
   }
