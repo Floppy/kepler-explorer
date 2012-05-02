@@ -26,20 +26,23 @@
                 distance = parseFloat(star.getAttribute("data-distance"));
                 // Handle missing distances
                 if (isNaN(distance))
-                    distance = 100000;
+                    distance = 4900;
                 // Get magnitude from element
                 magnitude = parseFloat(star.getAttribute("data-magnitude"));
-                // Handle missing distances
+                // Handle missing magnitudes
                 if (isNaN(magnitude))
-                    magnitude = 0;
+                    magnitude = 17;
                 radius = parseFloat(star.getAttribute("data-size")) * 1000
                 var show = true
-                if (magnitude > maxMagnitude)
+                if (magnitude > maxMagnitude){
                     show = false;
-                if (Math.log(distance) > maxDistance)
+                }
+                if (Math.log(distance) > maxDistance){
                     show = false;
-                if(radius > maxRadius)
+                }
+                if(radius > maxRadius){
                     show = false
+                }
                 if (show)
                     $("#"+star.id).show(); // Can't show and hide star directly for some reason. Because SVG or something.
                 else
@@ -47,21 +50,22 @@
             });
         }
 		$(function() {
-            var maxDistance = 10;
-            var maxMagnitude = 0;
-            var maxRadius = 12
-			$( "#distance-slider" ).slider({ max: 10, 
+            var maxDistance = 8.5;
+            var maxMagnitude = 17.5;
+            var maxRadius = 12;
+            drawStars(maxDistance, maxMagnitude, maxRadius);
+			$( "#distance-slider" ).slider({ max: 8.5,
 				                             min: 3,
  											 step: 0.1,
-											 value: 10,
+											 value: 8.5,
 										 	 slide: function(event, ui) {
 												 maxDistance = parseFloat(ui.value);
-                                                 drawStars(maxDistance, maxMagnitude, maxRadius)
+                                                 drawStars(maxDistance, maxMagnitude, maxRadius);
 										 	 }});
-            $( "#magnitude-slider" ).slider({ max: 1,
-                                              min: -17,
+            $( "#magnitude-slider" ).slider({ max: -7,
+                                              min: -17.5,
                                               step: 0.25,
-                                              value: -17,
+                                              value: -17.5,
                                               slide: function(event, ui) {
                                                   maxMagnitude = -parseFloat(ui.value);
                                                   drawStars(maxDistance, maxMagnitude, maxRadius)
