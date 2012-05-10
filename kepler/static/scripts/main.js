@@ -163,7 +163,6 @@ function drawOutline(canvas, options) {
     context.beginPath();
     var arc  = context.arc(options.x, options.y, options.radius, 0, 2 * Math.PI, false);
     context.fillStyle = "None";
-    context.fill();
     context.lineWidth = 1;
     context.strokeStyle = "#000000"
     context.stroke();
